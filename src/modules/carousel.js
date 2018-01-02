@@ -1,20 +1,15 @@
 /**
 
- @Name：layui.carousel 轮播模块
+ @Name：iui.carousel 轮播模块
  @Author：贤心
  @License：MIT
     
  */
  
-layui.define('jquery', function(exports){
+(function($){
   "use strict";
   
-  var $ = layui.$
-  ,hint = layui.hint()
-  ,device = layui.device()
-
-  //外部接口
-  ,carousel = {
+  var carousel = {//外部接口
     config: {} //全局配置项
 
     //设置全局项
@@ -26,14 +21,14 @@ layui.define('jquery', function(exports){
     
     //事件监听
     ,on: function(events, callback){
-      return layui.onevent.call(this, MOD_NAME, events, callback);
+      return iui.onevent.call(this, MOD_NAME, events, callback);
     }
   }
   
   //字符常量
-  ,MOD_NAME = 'carousel', ELEM = '.layui-carousel', THIS = 'layui-this', SHOW = 'layui-show', HIDE = 'layui-hide', DISABLED = 'layui-disabled'
+  , ELEM = '.iui-carousel', THIS = 'iui-this', SHOW = 'iui-show', HIDE = 'iui-hide', DISABLED = 'iui-disabled'
   
-  ,ELEM_ITEM = '>*[carousel-item]>*', ELEM_LEFT = 'layui-carousel-left', ELEM_RIGHT = 'layui-carousel-right', ELEM_PREV = 'layui-carousel-prev', ELEM_NEXT = 'layui-carousel-next', ELEM_ARROW = 'layui-carousel-arrow', ELEM_IND = 'layui-carousel-ind'
+  ,ELEM_ITEM = '>*[carousel-item]>*', ELEM_LEFT = 'iui-carousel-left', ELEM_RIGHT = 'iui-carousel-right', ELEM_PREV = 'iui-carousel-prev', ELEM_NEXT = 'iui-carousel-next', ELEM_ARROW = 'iui-carousel-arrow', ELEM_IND = 'iui-carousel-ind'
   
   //构造器
   ,Class = function(options){
@@ -176,8 +171,8 @@ layui.define('jquery', function(exports){
     
     //模板
     var tplArrow = $([
-      '<button class="layui-icon '+ ELEM_ARROW +'" lay-type="sub">'+ (options.anim === 'updown' ? '&#xe619;' : '&#xe603;') +'</button>'
-      ,'<button class="layui-icon '+ ELEM_ARROW +'" lay-type="add">'+ (options.anim === 'updown' ? '&#xe61a;' : '&#xe602;') +'</button>'
+      '<button class="iui-icon '+ ELEM_ARROW +'" lay-type="sub">'+ (options.anim === 'updown' ? '&#xe619;' : '&#xe603;') +'</button>'
+      ,'<button class="iui-icon '+ ELEM_ARROW +'" lay-type="add">'+ (options.anim === 'updown' ? '&#xe61a;' : '&#xe602;') +'</button>'
     ].join(''));
     
     //预设基础属性
@@ -206,8 +201,8 @@ layui.define('jquery', function(exports){
     var tplInd = that.elemInd = $(['<div class="'+ ELEM_IND +'"><ul>'
       ,function(){
         var li = [];
-        layui.each(that.elemItem, function(index){
-          li.push('<li'+ (options.index === index ? ' class="layui-this"' : '') +'></li>');
+        iui.each(that.elemItem, function(index){
+          li.push('<li'+ (options.index === index ? ' class="iui-this"' : '') +'></li>');
         });
         return li.join('');
       }()
@@ -278,7 +273,7 @@ layui.define('jquery', function(exports){
     
     that.haveSlide = true;
     
-    layui.event.call(this, MOD_NAME, 'change('+ filter +')', {
+    iui.event.call(this, MOD_NAME, 'change('+ filter +')', {
       index: options.index
       ,prevIndex: thisIndex
       ,item: elemItem.eq(options.index)
@@ -307,8 +302,7 @@ layui.define('jquery', function(exports){
     var inst = new Class(options);
     return inst;
   };
-  
-  exports(MOD_NAME, carousel);
-});
+
+})(jQuery);
 
  

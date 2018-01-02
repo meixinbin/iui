@@ -1,19 +1,15 @@
 /**
 
- @Name：layui.element 常用元素操作
+ @Name：iui.element 常用元素操作
  @Author：贤心
  @License：MIT
     
  */
  
-layui.define('jquery', function(exports){
+(function($){
   "use strict";
   
-  var $ = layui.$
-  ,hint = layui.hint()
-  ,device = layui.device()
-  
-  ,MOD_NAME = 'element', THIS = 'layui-this', SHOW = 'layui-show'
+  var THIS = 'iui-this', SHOW = 'iui-show'
   
   ,Element = function(){
     this.config = {};
@@ -28,40 +24,40 @@ layui.define('jquery', function(exports){
   
   //表单事件监听
   Element.prototype.on = function(events, callback){
-    return layui.onevent.call(this, MOD_NAME, events, callback);
+    return iui.onevent.call(this, MOD_NAME, events, callback);
   };
   
   //外部Tab新增
   Element.prototype.tabAdd = function(filter, options){
-    var TITLE = '.layui-tab-title'
-    ,tabElem = $('.layui-tab[lay-filter='+ filter +']')
+    var TITLE = '.iui-tab-title'
+    ,tabElem = $('.iui-tab[iui-filter='+ filter +']')
     ,titElem = tabElem.children(TITLE)
-    ,barElem = titElem.children('.layui-tab-bar')
-    ,contElem = tabElem.children('.layui-tab-content')
-    ,li = '<li lay-id="'+ (options.id||'') +'">'+ (options.title||'unnaming') +'</li>';
+    ,barElem = titElem.children('.iui-tab-bar')
+    ,contElem = tabElem.children('.iui-tab-content')
+    ,li = '<li iui-id="'+ (options.id||'') +'">'+ (options.title||'unnaming') +'</li>';
     barElem[0] ? barElem.before(li) : titElem.append(li);
-    contElem.append('<div class="layui-tab-item">'+ (options.content||'') +'</div>');
+    contElem.append('<div class="iui-tab-item">'+ (options.content||'') +'</div>');
     call.hideTabMore(true);
     call.tabAuto();
     return this;
   };
   
   //外部Tab删除
-  Element.prototype.tabDelete = function(filter, layid){
-    var TITLE = '.layui-tab-title'
-    ,tabElem = $('.layui-tab[lay-filter='+ filter +']')
+  Element.prototype.tabDelete = function(filter, iuiid){
+    var TITLE = '.iui-tab-title'
+    ,tabElem = $('.iui-tab[iui-filter='+ filter +']')
     ,titElem = tabElem.children(TITLE)
-    ,liElem = titElem.find('>li[lay-id="'+ layid +'"]');
+    ,liElem = titElem.find('>li[iui-id="'+ iuiid +'"]');
     call.tabDelete(null, liElem);
     return this;
   };
   
   //外部Tab切换
-  Element.prototype.tabChange = function(filter, layid){
-    var TITLE = '.layui-tab-title'
-    ,tabElem = $('.layui-tab[lay-filter='+ filter +']')
+  Element.prototype.tabChange = function(filter, iuiid){
+    var TITLE = '.iui-tab-title'
+    ,tabElem = $('.iui-tab[iui-filter='+ filter +']')
     ,titElem = tabElem.children(TITLE)
-    ,liElem = titElem.find('>li[lay-id="'+ layid +'"]');
+    ,liElem = titElem.find('>li[iui-id="'+ iuiid +'"]');
     call.tabClick(null, null, liElem);
     return this;
   };
@@ -78,8 +74,8 @@ layui.define('jquery', function(exports){
   
   //动态改变进度条
   Element.prototype.progress = function(filter, percent){
-    var ELEM = 'layui-progress'
-    ,elem = $('.'+ ELEM +'[lay-filter='+ filter +']')
+    var ELEM = 'iui-progress'
+    ,elem = $('.'+ ELEM +'[iui-filter='+ filter +']')
     ,elemBar = elem.find('.'+ ELEM +'-bar')
     ,text = elemBar.find('.'+ ELEM +'-text');
     elemBar.css('width', percent);
@@ -87,9 +83,9 @@ layui.define('jquery', function(exports){
     return this;
   };
   
-  var NAV_ELEM = '.layui-nav', NAV_ITEM = 'layui-nav-item', NAV_BAR = 'layui-nav-bar'
-  ,NAV_TREE = 'layui-nav-tree', NAV_CHILD = 'layui-nav-child', NAV_MORE = 'layui-nav-more'
-  ,NAV_ANIM = 'layui-anim layui-anim-upbit'
+  var NAV_ELEM = '.iui-nav', NAV_ITEM = 'iui-nav-item', NAV_BAR = 'iui-nav-bar'
+  ,NAV_TREE = 'iui-nav-tree', NAV_CHILD = 'iui-nav-child', NAV_MORE = 'iui-nav-more'
+  ,NAV_ANIM = 'iui-anim iui-anim-upbit'
   
   //基础事件体
   ,call = {
@@ -98,17 +94,17 @@ layui.define('jquery', function(exports){
       options = options || {};
       var othis = liElem || $(this)
       ,index = index || othis.parent().children('li').index(othis)
-      ,parents = options.headerElem ? othis.parent() : othis.parents('.layui-tab').eq(0)
-      ,item = options.bodyElem ? $(options.bodyElem) : parents.children('.layui-tab-content').children('.layui-tab-item')
+      ,parents = options.headerElem ? othis.parent() : othis.parents('.iui-tab').eq(0)
+      ,item = options.bodyElem ? $(options.bodyElem) : parents.children('.iui-tab-content').children('.iui-tab-item')
       ,elemA = othis.find('a')
-      ,filter = parents.attr('lay-filter');
+      ,filter = parents.attr('iui-filter');
       
       if(!(elemA.attr('href') !== 'javascript:;' && elemA.attr('target') === '_blank')){
         othis.addClass(THIS).siblings().removeClass(THIS);
         item.eq(index).addClass(SHOW).siblings().removeClass(SHOW);
       }
       
-      layui.event.call(this, MOD_NAME, 'tab('+ filter +')', {
+      iui.event.call(this, MOD_NAME, 'tab('+ filter +')', {
         elem: parents
         ,index: index
       });
@@ -117,9 +113,9 @@ layui.define('jquery', function(exports){
     //Tab删除
     ,tabDelete: function(e, othis){
       var li = othis || $(this).parent(), index = li.index()
-      ,parents = li.parents('.layui-tab').eq(0)
-      ,item = parents.children('.layui-tab-content').children('.layui-tab-item')
-      ,filter = parents.attr('lay-filter');
+      ,parents = li.parents('.iui-tab').eq(0)
+      ,item = parents.children('.iui-tab-content').children('.iui-tab-item')
+      ,filter = parents.attr('iui-filter');
       
       if(li.hasClass(THIS)){
         if(li.next()[0]){
@@ -135,7 +131,7 @@ layui.define('jquery', function(exports){
         call.tabAuto();
       }, 50);
       
-      layui.event.call(this, MOD_NAME, 'tabDelete('+ filter +')', {
+      iui.event.call(this, MOD_NAME, 'tabDelete('+ filter +')', {
         elem: parents
         ,index: index
       });
@@ -143,26 +139,26 @@ layui.define('jquery', function(exports){
     
     //Tab自适应
     ,tabAuto: function(){
-      var SCROLL = 'layui-tab-scroll', MORE = 'layui-tab-more', BAR = 'layui-tab-bar'
-      ,CLOSE = 'layui-tab-close', that = this;
+      var SCROLL = 'iui-tab-scroll', MORE = 'iui-tab-more', BAR = 'iui-tab-bar'
+      ,CLOSE = 'iui-tab-close', that = this;
       
-      $('.layui-tab').each(function(){
+      $('.iui-tab').each(function(){
         var othis = $(this)
-        ,title = othis.children('.layui-tab-title')
-        ,item = othis.children('.layui-tab-content').children('.layui-tab-item')
-        ,STOPE = 'lay-stope="tabmore"'
-        ,span = $('<span class="layui-unselect layui-tab-bar" '+ STOPE +'><i '+ STOPE +' class="layui-icon">&#xe61a;</i></span>');
+        ,title = othis.children('.iui-tab-title')
+        ,item = othis.children('.iui-tab-content').children('.iui-tab-item')
+        ,STOPE = 'iui-stope="tabmore"'
+        ,span = $('<span class="iui-unselect iui-tab-bar" '+ STOPE +'><i '+ STOPE +' class="iui-icon">&#xe61a;</i></span>');
         
         if(that === window && device.ie != 8){
           call.hideTabMore(true)
         }
         
         //允许关闭
-        if(othis.attr('lay-allowClose')){
+        if(othis.attr('iui-allowClose')){
           title.find('li').each(function(){
             var li = $(this);
             if(!li.find('.'+CLOSE)[0]){
-              var close = $('<i class="layui-icon layui-unselect '+ CLOSE +'">&#x1006;</i>');
+              var close = $('<i class="iui-icon iui-unselect '+ CLOSE +'">&#x1006;</i>');
               close.on('click', call.tabDelete);
               li.append(close);
             }
@@ -186,19 +182,19 @@ layui.define('jquery', function(exports){
     }
     //隐藏更多Tab
     ,hideTabMore: function(e){
-      var tsbTitle = $('.layui-tab-title');
-      if(e === true || $(e.target).attr('lay-stope') !== 'tabmore'){
-        tsbTitle.removeClass('layui-tab-more');
-        tsbTitle.find('.layui-tab-bar').attr('title','');
+      var tsbTitle = $('.iui-tab-title');
+      if(e === true || $(e.target).attr('iui-stope') !== 'tabmore'){
+        tsbTitle.removeClass('iui-tab-more');
+        tsbTitle.find('.iui-tab-bar').attr('title','');
       }
     }
     
     //点击选中
     ,clickThis: function(){
       var othis = $(this), parents = othis.parents(NAV_ELEM)
-      ,filter = parents.attr('lay-filter')
+      ,filter = parents.attr('iui-filter')
       ,elemA = othis.find('a')
-      ,unselect = typeof othis.attr('lay-unselect') === 'string';
+      ,unselect = typeof othis.attr('iui-unselect') === 'string';
 
       if(othis.find('.'+NAV_CHILD)[0]) return;
       
@@ -207,15 +203,15 @@ layui.define('jquery', function(exports){
         othis.addClass(THIS);
       }
       
-      layui.event.call(this, MOD_NAME, 'nav('+ filter +')', othis);
+      iui.event.call(this, MOD_NAME, 'nav('+ filter +')', othis);
     }
     //点击子菜单选中
     ,clickChild: function(){
       var othis = $(this), parents = othis.parents(NAV_ELEM)
-      ,filter = parents.attr('lay-filter');
+      ,filter = parents.attr('iui-filter');
       parents.find('.'+THIS).removeClass(THIS);
       othis.addClass(THIS);
-      layui.event.call(this, MOD_NAME, 'nav('+ filter +')', othis);
+      iui.event.call(this, MOD_NAME, 'nav('+ filter +')', othis);
     }
     //展开二级菜单
     ,showChild: function(){
@@ -223,27 +219,27 @@ layui.define('jquery', function(exports){
       var parent = othis.parent(), child = othis.siblings('.'+NAV_CHILD);
       if(parents.hasClass(NAV_TREE)){
         child.removeClass(NAV_ANIM);
-        parent[child.css('display') === 'none' ? 'addClass': 'removeClass'](NAV_ITEM+'ed');
+        parent[child.css('dispiui') === 'none' ? 'addClass': 'removeClass'](NAV_ITEM+'ed');
       }
     }
     
     //折叠面板
     ,collapse: function(){
-      var othis = $(this), icon = othis.find('.layui-colla-icon')
-      ,elemCont = othis.siblings('.layui-colla-content')
-      ,parents = othis.parents('.layui-collapse').eq(0)
-      ,filter = parents.attr('lay-filter')
-      ,isNone = elemCont.css('display') === 'none';
+      var othis = $(this), icon = othis.find('.iui-colla-icon')
+      ,elemCont = othis.siblings('.iui-colla-content')
+      ,parents = othis.parents('.iui-collapse').eq(0)
+      ,filter = parents.attr('iui-filter')
+      ,isNone = elemCont.css('dispiui') === 'none';
       //是否手风琴
-      if(typeof parents.attr('lay-accordion') === 'string'){
-        var show = parents.children('.layui-colla-item').children('.'+SHOW);
-        show.siblings('.layui-colla-title').children('.layui-colla-icon').html('&#xe602;');
+      if(typeof parents.attr('iui-accordion') === 'string'){
+        var show = parents.children('.iui-colla-item').children('.'+SHOW);
+        show.siblings('.iui-colla-title').children('.iui-colla-icon').html('&#xe602;');
         show.removeClass(SHOW);
       }
       elemCont[isNone ? 'addClass' : 'removeClass'](SHOW);
       icon.html(isNone ? '&#xe61a;' : '&#xe602;');
       
-      layui.event.call(this, MOD_NAME, 'collapse('+ filter +')', {
+      iui.event.call(this, MOD_NAME, 'collapse('+ filter +')', {
         title: othis
         ,content: elemCont
         ,show: isNone
@@ -254,7 +250,7 @@ layui.define('jquery', function(exports){
   //初始化元素操作
   Element.prototype.init = function(type, filter){
     var that = this, elemFilter = function(){
-      return filter ? ('[lay-filter="' + filter +'"]') : '';
+      return filter ? ('[iui-filter="' + filter +'"]') : '';
     }(), items = {
       
       //Tab选项卡
@@ -288,7 +284,7 @@ layui.define('jquery', function(exports){
             }, device.ie && device.ie < 10 ? 0 : TIME);
             
             clearTimeout(timeEnd[index]);
-            if(child.css('display') === 'block'){
+            if(child.css('dispiui') === 'block'){
               clearTimeout(timerMore[index]);
             }
             timerMore[index] = setTimeout(function(){
@@ -355,11 +351,11 @@ layui.define('jquery', function(exports){
       
       //面包屑
       ,breadcrumb: function(){
-        var ELEM = '.layui-breadcrumb';
+        var ELEM = '.iui-breadcrumb';
         
         $(ELEM + elemFilter).each(function(){
           var othis = $(this)
-          ,ATTE_SPR = 'lay-separator'
+          ,ATTE_SPR = 'iui-separator'
           ,separator = othis.attr(ATTE_SPR) || '/'
           ,aNode = othis.find('a');
           if(aNode.next('span['+ ATTE_SPR +']')[0]) return;
@@ -373,11 +369,11 @@ layui.define('jquery', function(exports){
       
       //进度条
       ,progress: function(){
-        var ELEM = 'layui-progress';
+        var ELEM = 'iui-progress';
         $('.' + ELEM + elemFilter).each(function(){
           var othis = $(this)
-          ,elemBar = othis.find('.layui-progress-bar')
-          ,percent = elemBar.attr('lay-percent');
+          ,elemBar = othis.find('.iui-progress-bar')
+          ,percent = elemBar.attr('iui-percent');
 
           elemBar.css('width', function(){
             return /^.+\/.+$/.test(percent) 
@@ -385,7 +381,7 @@ layui.define('jquery', function(exports){
            : percent;
           }());
           
-          if(othis.attr('lay-showPercent')){
+          if(othis.attr('iui-showPercent')){
             setTimeout(function(){
               elemBar.html('<span class="'+ ELEM +'-text">'+ percent +'</span>');
             },350);
@@ -395,19 +391,19 @@ layui.define('jquery', function(exports){
       
       //折叠面板
       ,collapse: function(){
-        var ELEM = 'layui-collapse';
+        var ELEM = 'iui-collapse';
         
         $('.' + ELEM + elemFilter).each(function(){
-          var elemItem = $(this).find('.layui-colla-item')
+          var elemItem = $(this).find('.iui-colla-item')
           elemItem.each(function(){
             var othis = $(this)
-            ,elemTitle = othis.find('.layui-colla-title')
-            ,elemCont = othis.find('.layui-colla-content')
-            ,isNone = elemCont.css('display') === 'none';
+            ,elemTitle = othis.find('.iui-colla-title')
+            ,elemCont = othis.find('.iui-colla-content')
+            ,isNone = elemCont.css('dispiui') === 'none';
             
             //初始状态
-            elemTitle.find('.layui-colla-icon').remove();
-            elemTitle.append('<i class="layui-icon layui-colla-icon">'+ (isNone ? '&#xe602;' : '&#xe61a;') +'</i>');
+            elemTitle.find('.iui-colla-icon').remove();
+            elemTitle.append('<i class="iui-icon iui-colla-icon">'+ (isNone ? '&#xe602;' : '&#xe61a;') +'</i>');
 
             //点击标题
             elemTitle.off('click', call.collapse).on('click', call.collapse);
@@ -417,7 +413,7 @@ layui.define('jquery', function(exports){
       }
     };
 
-    return items[type] ? items[type]() : layui.each(items, function(index, item){
+    return items[type] ? items[type]() : iui.each(items, function(index, item){
       item();
     });
   };
@@ -427,11 +423,10 @@ layui.define('jquery', function(exports){
   var element = new Element(), dom = $(document);
   element.render();
   
-  var TITLE = '.layui-tab-title li';
+  var TITLE = '.iui-tab-title li';
   dom.on('click', TITLE, call.tabClick); //Tab切换
   dom.on('click', call.hideTabMore); //隐藏展开的Tab
   $(window).on('resize', call.tabAuto); //自适应
-  
-  exports(MOD_NAME, element);
-});
+    
+})(jQuery);
 
