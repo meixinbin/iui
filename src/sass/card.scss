@@ -1,0 +1,120 @@
+
+.iui-card-body,
+.iui-card-header,
+.iui-form-label,
+.iui-form-mid,
+.iui-form-select,
+.iui-input-block,
+.iui-input-inline,
+.iui-textarea {
+    position: relative
+}
+
+/* 卡片面板 */
+
+.iui-card {
+    margin-bottom: 15px;
+    border-radius: 2px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .05);
+}
+
+.iui-card:last-child {
+    margin-bottom: 0;
+}
+
+.iui-card-header {
+    position: relative;
+    height: 42px;
+    line-height: 42px;
+    padding: 0 15px;
+    border-bottom: 1px solid #f6f6f6;
+    color: #333;
+    border-radius: 2px 2px 0 0;
+    font-size: 14px;
+}
+
+.iui-bg-black,
+.iui-bg-blue,
+.iui-bg-cyan,
+.iui-bg-green,
+.iui-bg-orange,
+.iui-bg-red {
+    color: #fff!important
+}
+
+.iui-card-body {
+    position: relative;
+    padding: 10px 15px;
+    line-height: 24px;
+}
+
+.iui-card-body .iui-table {
+    margin: 5px 0;
+}
+
+.iui-card .iui-tab {
+    margin: 0;
+}
+
+.iui-panel-window {
+    position: relative;
+    padding: 15px;
+    border-radius: 0;
+    border-top: 5px solid #E6E6E6;
+    background-color: #fff
+}
+
+.iui-bg-red {
+    background-color: #FF5722!important
+}
+
+.iui-bg-orange {
+    background-color: #FFB800!important
+}
+
+.iui-bg-green {
+    background-color: #009688!important
+}
+
+.iui-bg-cyan {
+    background-color: #2F4056!important
+}
+
+.iui-bg-blue {
+    background-color: #1E9FFF!important
+}
+
+.iui-bg-black {
+    background-color: #393D49!important
+}
+
+.iui-bg-gray {
+    background-color: #eee!important;
+    color: #666!important
+}
+
+.iui-badge-rim,
+.iui-colla-content,
+.iui-colla-item,
+.iui-collapse,
+.iui-elem-field,
+.iui-form-pane .iui-form-item[pane],
+.iui-form-pane .iui-form-label,
+.iui-input,
+.iui-layedit,
+.iui-layedit-tool,
+.iui-quote-nm,
+.iui-select,
+.iui-tab-bar,
+.iui-tab-card,
+.iui-tab-title,
+.iui-tab-title .iui-this:after,
+.iui-textarea {
+    border-color: #e6e6e6
+}
+
+.iui-timeline-item:before,
+hr {
+    background-color: #e6e6e6
+}

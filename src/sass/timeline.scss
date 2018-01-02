@@ -1,0 +1,57 @@
+/* 时间线 */
+
+.iui-timeline {
+    padding-left: 5px;
+}
+
+.iui-timeline-item {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.iui-timeline-axis {
+    position: absolute;
+    left: -5px;
+    top: 0;
+    z-index: 10;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    background-color: #fff;
+    color: #5FB878;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.iui-timeline-axis:hover {
+    color: #FF5722;
+}
+
+.iui-timeline-item:before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 0;
+    z-index: 0;
+    width: 1px;
+    height: 100%;
+}
+
+.iui-timeline-item:last-child:before {
+    display: none;
+}
+
+.iui-timeline-item:first-child:before {
+    display: block;
+}
+
+.iui-timeline-content {
+    padding-left: 25px;
+    ;
+}
+
+.iui-timeline-title {
+    position: relative;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,80 @@
+<div>
+<div class="iui-card layadmin-header">
+  <div class="iui-breadcrumb" lay-filter="breadcrumb" style="visibility: visible;">
+    <a lay-href="">主页</a><span lay-separator="">/</span>
+    <a><cite>组件</cite></a><span lay-separator="">/</span>
+    <a href="http://layer.iui.com/" target="_blank">layer</a><span lay-separator="">/</span>
+    <a><cite>风格定制</cite></a>
+  </div>
+</div>
+
+<style>
+/* 这段样式只是用于演示 */
+.iui-card-body{padding-top: 15px;}
+</style>
+
+<div class="iui-fluid">
+  <div class="iui-row iui-col-space15">
+    <div class="iui-col-md12">
+      <div class="iui-card">
+        <div class="iui-card-header">YYY</div>
+        <div class="iui-card-body">
+          
+          <div class="iui-btn-container layadmin-layer-demo">
+            <button data-type="test1" class="iui-btn iui-btn-primary">iuiAdmin风格</button>
+            <button data-type="test2" class="iui-btn iui-btn-primary">右侧呼出</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="iui-col-md12">
+      <div class="iui-card">
+        <div class="iui-card-body">
+          
+          持续增加中
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+iui.use(['admin'], function(){
+  var $ = iui.$
+  ,admin = iui.admin
+  ,element = iui.element
+  ,router = iui.router();
+
+  element.render();
+  
+  var active = {
+    test1: function(){
+      admin.popup({
+        title: 'iuiAdmin'
+        ,shade: 0
+        ,anim: -1
+        ,area: ['280px', '150px']
+        ,id: 'layadmin-layer-skin-test'
+        ,skin: 'iui-anim iui-anim-upbit'
+        ,content: '内容'
+      })
+    }
+    ,test2: function(){
+      admin.popupRight({
+        id: 'LAY_adminPopupLayerTest'
+        ,success: function(){
+          $('#'+ this.id).html('<div style="padding: 20px;">放入内容</div>');
+          //admin.view(this.id).render('system/xxx')
+        }
+      });
+    }
+  };
+  
+  $('.layadmin-layer-demo .iui-btn').on('click', function(){
+    var type = $(this).data('type');
+    active[type] && active[type].call(this);
+  });
+});
+</script></div>

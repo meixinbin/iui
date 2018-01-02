@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/iui.css" />
+		<script type="text/javascript">
+			var GV = {
+				ASSETS_ROOT: "//localhost:8082",
+				JS_ROOT: '#assetsHost()', //js目录
+				JS_VERSION: '12aa1aswassssdssasasasfsa',
+			};
+			var root = GV.ASSETS_ROOT || location.origin;
+			var alias_js = {
+				jquery: root + '/assets/libs/jquery/2.1.4/jquery-2.1.4.min',
+				jeditor: root + '/assets/jeditor/JEditor',
+				tagsinput: root + '/assets/global/plugins/jquery-tags-input/jquery.tagsinput.min',
+				bootstrap: root + '/assets/global/plugins/bootstrap/js/bootstrap.min',
+				ajaxForm: root + '/js/ui_libs/ajaxForm/ajaxForm',
+				validate: root + '/js/ui_libs/validate/validate',
+				swfupload: root + '/js/util_libs/swfupload/swfupload',
+				dialog: root + '/assets/js/dialog/dialog',
+				draggable: root + '/assets/js/draggable/draggable',
+				common: root + '/assets/common',
+				global: root + '/assets/global',
+			};
+			var alias_css = {
+				colorPicker: root + 'ui_libs/colorPicker/style',
+				datePicker: root + 'ui_libs/datePicker/style',
+				chosen: root + 'ui_libs/chosen/chosen'
+			};
+			var menu_speed = 235,
+				menu_accordion = true;
+		</script>
+
+<script type="text/javascript" src="../../../assets/libs/jquery/2.1.4/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="../js/iui.js"></script>
+
+	</head>
+
+	<body>
+		
+<div class="iui-content">
+    		<div class="iui-slider">
+			    <div class="iui-slider-indicator iui-segmented-control iui-segmented-control-inverted">
+			        <a class="iui-control-item" href="#item1">选项卡1</a>
+			        <a class="iui-control-item" href="#item2">选项卡2</a>
+			        <a class="iui-control-item" href="#item3">选项卡3</a>
+			        <a class="iui-control-item" href="#item3">选项卡4</a>
+			    </div>
+			    <div id="sliderProgressBar" class="iui-slider-progress-bar iui-col-xs-3"></div>
+			    <div class="iui-slider-group">
+			        <div id="item1" class="iui-slider-item iui-control-content iui-active">
+			            <ul class="iui-table-view">
+			                <li class="iui-table-view-cell">第1个选项卡子项</li>
+			                <li class="iui-table-view-cell">第1个选项卡子项</li>
+			            </ul>
+			        </div>
+			        <div id="item2" class="iui-slider-item iui-control-content">
+			            <ul class="iui-table-view">
+			                <li class="iui-table-view-cell">第2个选项卡子项</li>
+			                <li class="iui-table-view-cell">第2个选项卡子项</li>
+			            </ul>
+			        </div>
+			        <div id="item3" class="iui-slider-item iui-control-content">
+			            <ul class="iui-table-view">
+			                <li class="iui-table-view-cell">第3个选项卡子项</li>
+			                <li class="iui-table-view-cell">第3个选项卡子项</li>
+			            </ul>
+			        </div>
+			        <div id="item4" class="iui-slider-item iui-control-content">
+			            <ul class="iui-table-view">
+			                <li class="iui-table-view-cell">第4个选项卡子项</li>
+			                <li class="iui-table-view-cell">第4个选项卡子项</li>
+			            </ul>
+			        </div>
+			    </div>
+			</div>
+	
+</div>
+		<script>
+//			iui.loading("success")
+		</script>
+
+	</body>
+
+</html>

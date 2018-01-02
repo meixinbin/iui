@@ -1,0 +1,153 @@
+
+/** 分页 **/
+
+.iui-laypage {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+    margin: 10px 0;
+    font-size: 0;
+}
+
+.iui-laypage>a:first-child,
+.iui-laypage>a:first-child em {
+    border-radius: 2px 0 0 2px;
+}
+
+.iui-laypage>a:last-child,
+.iui-laypage>a:last-child em {
+    border-radius: 0 2px 2px 0;
+}
+
+.iui-laypage>*:first-child {
+    margin-left: 0!important;
+}
+
+.iui-laypage>*:last-child {
+    margin-right: 0!important;
+}
+
+.iui-laypage a,
+.iui-laypage span,
+.iui-laypage input,
+.iui-laypage button,
+.iui-laypage select {
+    border: 1px solid #e2e2e2;
+}
+
+.iui-laypage a,
+.iui-laypage span {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+    padding: 0 15px;
+    height: 28px;
+    line-height: 28px;
+    margin: 0 -1px 5px 0;
+    background-color: #fff;
+    color: #333;
+    font-size: 12px;
+}
+
+.iui-laypage a:hover {
+    color: #009688;
+}
+
+.iui-laypage em {
+    font-style: normal;
+}
+
+.iui-laypage .iui-laypage-spr {
+    color: #999;
+    font-weight: 700;
+}
+
+.iui-laypage a {
+    text-decoration: none;
+}
+
+.iui-laypage .iui-laypage-curr {
+    position: relative;
+}
+
+.iui-laypage .iui-laypage-curr em {
+    position: relative;
+    color: #fff;
+}
+
+.iui-laypage .iui-laypage-curr .iui-laypage-em {
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    padding: 1px;
+    width: 100%;
+    height: 100%;
+    background-color: #009688;
+}
+
+.iui-laypage-em {
+    border-radius: 2px;
+}
+
+.iui-laypage-prev em,
+.iui-laypage-next em {
+    font-family: Sim sun;
+    font-size: 16px;
+}
+
+.iui-laypage .iui-laypage-count,
+.iui-laypage .iui-laypage-limits,
+.iui-laypage .iui-laypage-skip {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 0;
+    border: none;
+}
+
+.iui-laypage .iui-laypage-limits {
+    vertical-align: top;
+}
+
+.iui-laypage select {
+    height: 22px;
+    padding: 3px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.iui-laypage .iui-laypage-skip {
+    height: 30px;
+    line-height: 30px;
+    color: #999;
+}
+
+.iui-laypage input,
+.iui-laypage button {
+    height: 30px;
+    line-height: 30px;
+    border-radius: 2px;
+    vertical-align: top;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.iui-laypage input {
+    display: inline-block;
+    width: 40px;
+    margin: 0 10px;
+    padding: 0 3px;
+    text-align: center;
+}
+
+.iui-laypage input:focus,
+.iui-laypage select:focus {
+    border-color: #009688!important;
+}
+
+.iui-laypage button {
+    margin-left: 10px;
+    padding: 0 10px;
+    cursor: pointer;
+}

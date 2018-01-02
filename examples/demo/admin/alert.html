@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/iui.css" />
+		<script type="text/javascript">
+			var GV = {
+				ASSETS_ROOT: "//localhost:8082",
+				JS_ROOT: '#assetsHost()', //js目录
+				JS_VERSION: '12aa1aswassssdssasasasfsa',
+			};
+			var root = GV.ASSETS_ROOT || location.origin;
+			var alias_js = {
+				jquery: root + '/assets/libs/jquery/2.1.4/jquery-2.1.4.min',
+				jeditor: root + '/assets/jeditor/JEditor',
+				tagsinput: root + '/assets/global/plugins/jquery-tags-input/jquery.tagsinput.min',
+				bootstrap: root + '/assets/global/plugins/bootstrap/js/bootstrap.min',
+				ajaxForm: root + '/js/ui_libs/ajaxForm/ajaxForm',
+				validate: root + '/js/ui_libs/validate/validate',
+				swfupload: root + '/js/util_libs/swfupload/swfupload',
+				dialog: root + '/assets/js/dialog/dialog',
+				draggable: root + '/assets/js/draggable/draggable',
+				common: root + '/assets/common',
+				global: root + '/assets/global',
+			};
+			var alias_css = {
+				colorPicker: root + 'ui_libs/colorPicker/style',
+				datePicker: root + 'ui_libs/datePicker/style',
+				chosen: root + 'ui_libs/chosen/chosen'
+			};
+			var menu_speed = 235,
+				menu_accordion = true;
+		</script>
+		<style>
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				margin: 0px;
+				padding: 0px;
+			}
+			.iui-content{height: 100%;}
+			.area {
+				margin: 20px auto 0px auto;
+			}
+			
+			.iui-input-group {
+				margin-top: 10px;
+			}
+			
+			.iui-input-group:first-child {
+				margin-top: 20px;
+			}
+			
+			.iui-input-group label {
+				width: 22%;
+			}
+			
+			.iui-input-row label~input,
+			.iui-input-row label~select,
+			.iui-input-row label~textarea {
+				width: 78%;
+			}
+			
+			.iui-checkbox input[type=checkbox],
+			.iui-radio input[type=radio] {
+				top: 6px;
+			}
+			
+			.iui-content-padded {
+				margin-top: 25px;
+			}
+			
+			.iui-btn {
+				padding: 10px;
+			}
+			
+			.link-area {
+				display: block;
+				margin-top: 25px;
+				text-align: center;
+			}
+			
+			.spliter {
+				color: #bbb;
+				padding: 0px 8px;
+			}
+			
+			.oauth-area {
+				position: absolute;
+				bottom: 20px;
+				left: 0px;
+				text-align: center;
+				width: 100%;
+				padding: 0px;
+				margin: 0px;
+			}
+			
+			.oauth-area .oauth-btn {
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+				background-size: 30px 30px;
+				background-position: center center;
+				background-repeat: no-repeat;
+				margin: 0px 20px;
+				/*-webkit-filter: grayscale(100%); */
+				border: solid 1px #ddd;
+				border-radius: 25px;
+			}
+			
+			.oauth-area .oauth-btn:active {
+				border: solid 1px #aaa;
+			}
+			
+			.oauth-area .oauth-btn.disabled {
+				background-color: #ddd;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="iui-content">
+			<!-- 主界面不动、菜单移动 -->
+			<!-- 侧滑导航根容器 -->
+			<div class="iui-off-canvas-wrap iui-draggable iui-slide-in">
+			  <!-- 菜单容器 -->
+			  <aside class="iui-off-canvas-left" id="offCanvasSide">
+			    <div class="iui-scroll-wrapper">
+			      <div class="iui-scroll">
+			        <!-- 菜单具体展示内容 -->
+			      </div>
+			    </div>
+			  </aside>
+			  <!-- 主页面容器 -->
+			  <div class="iui-inner-wrap">
+			    <!-- 主页面标题 -->
+			    <header class="iui-bar iui-bar-nav">
+			      <a class="iui-icon iui-action-menu iui-icon-bars iui-pull-left" href="#offCanvasSide"></a>
+			      <h1 class="iui-title">标题</h1>
+			    </header>
+			    <nav class="iui-bar iui-bar-tab">
+				    <a class="iui-tab-item iui-active">
+				        <span class="iui-icon iui-icon-home"></span>
+				        <span class="iui-tab-label">首页</span>
+				    </a>
+				    <a class="iui-tab-item">
+				        <span class="iui-icon iui-icon-phone"></span>
+				        <span class="iui-tab-label">电话</span>
+				    </a>
+				    <a class="iui-tab-item">
+				        <span class="iui-icon iui-icon-email"></span>
+				        <span class="iui-tab-label">邮件</span>
+				    </a>
+				    <a class="iui-tab-item">
+				        <span class="iui-icon iui-icon-gear"></span>
+				        <span class="iui-tab-label">设置</span>
+				    </a>
+				</nav>
+			    <div class="iui-content iui-scroll-wrapper">
+			      <div class="iui-scroll">
+			        <!-- 主界面具体展示内容 -->
+			        dddd
+			      </div>
+			    </div>  
+			    <div class="iui-off-canvas-backdrop"></div>
+			  </div>
+			</div>
+			    </div>
+		<script type="text/javascript" src="../../../assets/libs/jquery/2.1.4/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="../../js/iui.js"></script>
+
+		<script>
+			(function($, doc) {
+				$.init({
+					statusBarBackground: '#f7f7f7'
+				});
+				$.plusReady(function() {
+					plus.screen.lockOrientation("portrait-primary");
+					var settings = app.getSettings();
+					var state = app.getState();
+					var mainPage = $.preload({
+						"id": 'main',
+						"url": 'main.html'
+					});
+					var toMain = function() {
+						$.fire(mainPage, 'show', null);
+						setTimeout(function() {
+							$.openWindow({
+								id: 'main',
+								show: {
+									aniShow: 'pop-in'
+								},
+								waiting: {
+									autoShow: false
+								}
+							});
+						}, 0);
+					};
+					//检查 "登录状态/锁屏状态" 开始
+					if (settings.autoLogin && state.token && settings.gestures) {
+						$.openWindow({
+							url: 'unlock.html',
+							id: 'unlock',
+							show: {
+								aniShow: 'pop-in'
+							},
+							waiting: {
+								autoShow: false
+							}
+						});
+					} else if (settings.autoLogin && state.token) {
+						toMain();
+					} else {
+						app.setState(null);
+						//第三方登录
+						var authBtns = ['qihoo', 'weixin', 'sinaweibo', 'qq']; //配置业务支持的第三方登录
+						var auths = {};
+						var oauthArea = doc.querySelector('.oauth-area');
+						plus.oauth.getServices(function(services) {
+							for (var i in services) {
+								var service = services[i];
+								auths[service.id] = service;
+								if (~authBtns.indexOf(service.id)) {
+									var isInstalled = app.isInstalled(service.id);
+									var btn = document.createElement('div');
+									//如果微信未安装，则为不启用状态
+									btn.setAttribute('class', 'oauth-btn' + (!isInstalled && service.id === 'weixin' ? (' disabled') : ''));
+									btn.authId = service.id;
+									btn.style.backgroundImage = 'url("images/' + service.id + '.png")'
+									oauthArea.appendChild(btn);
+								}
+							}
+							$(oauthArea).on('tap', '.oauth-btn', function() {
+								if (this.classList.contains('disabled')) {
+									plus.nativeUI.toast('您尚未安装微信客户端');
+									return;
+								}
+								var auth = auths[this.authId];
+								var waiting = plus.nativeUI.showWaiting();
+								auth.login(function() {
+									waiting.close();
+									plus.nativeUI.toast("登录认证成功");
+									auth.getUserInfo(function() {
+										plus.nativeUI.toast("获取用户信息成功");
+										var name = auth.userInfo.nickname || auth.userInfo.name;
+										app.createState(name, function() {
+											toMain();
+										});
+									}, function(e) {
+										plus.nativeUI.toast("获取用户信息失败：" + e.message);
+									});
+								}, function(e) {
+									waiting.close();
+									plus.nativeUI.toast("登录认证失败：" + e.message);
+								});
+							});
+						}, function(e) {
+							oauthArea.style.display = 'none';
+							plus.nativeUI.toast("获取登录认证失败：" + e.message);
+						});
+					}
+					// close splash
+					setTimeout(function() {
+						//关闭 splash
+						plus.navigator.closeSplashscreen();
+					}, 600);
+					//检查 "登录状态/锁屏状态" 结束
+					var loginButton = doc.getElementById('login');
+					var accountBox = doc.getElementById('account');
+					var passwordBox = doc.getElementById('password');
+					var autoLoginButton = doc.getElementById("autoLogin");
+					var regButton = doc.getElementById('reg');
+					var forgetButton = doc.getElementById('forgetPassword');
+					loginButton.addEventListener('tap', function(event) {
+						var loginInfo = {
+							account: accountBox.value,
+							password: passwordBox.value
+						};
+						app.login(loginInfo, function(err) {
+							if (err) {
+								plus.nativeUI.toast(err);
+								return;
+							}
+							toMain();
+						});
+					});
+					$.enterfocus('#login-form input', function() {
+						$.trigger(loginButton, 'tap');
+					});
+					autoLoginButton.classList[settings.autoLogin ? 'add' : 'remove']('iui-active')
+					autoLoginButton.addEventListener('toggle', function(event) {
+						setTimeout(function() {
+							var isActive = event.detail.isActive;
+							settings.autoLogin = isActive;
+							app.setSettings(settings);
+						}, 50);
+					}, false);
+					regButton.addEventListener('tap', function(event) {
+						$.openWindow({
+							url: 'reg.html',
+							id: 'reg',
+							preload: true,
+							show: {
+								aniShow: 'pop-in'
+							},
+							styles: {
+								popGesture: 'hide'
+							},
+							waiting: {
+								autoShow: false
+							}
+						});
+					}, false);
+					forgetButton.addEventListener('tap', function(event) {
+						$.openWindow({
+							url: 'http://192.168.8.244:10100',
+							id: 'forget_password',
+							preload: true,
+							show: {
+								aniShow: 'pop-in'
+							},
+							styles: {
+								popGesture: 'hide'
+							},
+							waiting: {
+								autoShow: true
+							}
+						});
+					}, false);
+					//
+					window.addEventListener('resize', function() {
+						oauthArea.style.display = document.body.clientHeight > 400 ? 'block' : 'none';
+					}, false);
+					//
+					var backButtonPress = 0;
+					$.back = function(event) {
+						backButtonPress++;
+						if (backButtonPress > 1) {
+							plus.runtime.quit();
+						} else {
+							plus.nativeUI.toast('再按一次退出应用');
+						}
+						setTimeout(function() {
+							backButtonPress = 0;
+						}, 1000);
+						return false;
+					};
+				});
+			}(iui, document));
+		</script>
+	</body>
+</html>

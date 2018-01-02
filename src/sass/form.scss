@@ -1,0 +1,623 @@
+/** 表单 **/
+
+.iui-input,
+.iui-textarea,
+.iui-select {
+    height: 38px;
+    line-height: 1.3;
+    line-height: 38px\9;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+.iui-input::-webkit-input-placeholder,
+.iui-textarea::-webkit-input-placeholder,
+.iui-select::-webkit-input-placeholder {
+    line-height: 1.3;
+}
+
+.iui-input,
+.iui-textarea {
+    display: block;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.iui-input:hover,
+.iui-textarea:hover {
+    border-color: #D2D2D2 !important;
+}
+
+.iui-input:focus,
+.iui-textarea:focus {
+    border-color: #C9C9C9 !important;
+}
+
+.iui-textarea {
+    position: relative;
+    min-height: 100px;
+    height: auto;
+    line-height: 20px;
+    padding: 6px 10px;
+    resize: vertical;
+}
+
+.iui-select {
+    padding: 0 10px;
+}
+
+.iui-form select,
+.iui-form input[type=checkbox],
+.iui-form input[type=radio] {
+    display: none;
+}
+
+.iui-form *[lay-ignore] {
+    display: initial;
+}
+
+.iui-form-item {
+    margin-bottom: 15px;
+    clear: both;
+    *zoom: 1;
+}
+
+.iui-form-item:after {
+    content: '\20';
+    clear: both;
+    *zoom: 1;
+    display: block;
+    height: 0;
+}
+
+.iui-form-label {
+    position: relative;
+    float: left;
+    display: block;
+    padding: 9px 15px;
+    width: 80px;
+    font-weight: normal;
+    line-height: 20px;
+    text-align: right;
+}
+
+.iui-form-item .iui-inline {
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+
+.iui-input-block,
+.iui-input-inline {
+    position: relative;
+}
+
+.iui-input-block {
+    margin-left: 110px;
+    min-height: 36px;
+}
+
+.iui-input-inline {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.iui-form-item .iui-input-inline {
+    float: left;
+    width: 190px;
+    margin-right: 10px;
+}
+
+.iui-form-text .iui-input-inline {
+    width: auto;
+}
+
+
+/* 分割块 */
+
+.iui-form-mid {
+    position: relative;
+    float: left;
+    display: block;
+    padding: 8px 0 !important;
+    line-height: 20px;
+    margin-right: 10px;
+}
+
+
+/* 警告域 */
+
+.iui-form-danger:focus,
+.iui-form-danger+.iui-form-select .iui-input {
+    border-color: #FF5722 !important;
+}
+
+
+/* 下拉选择 */
+
+.iui-form-select {
+    position: relative;
+}
+
+.iui-form-select .iui-input {
+    padding-right: 30px;
+    cursor: pointer;
+}
+
+.iui-form-select .iui-edge {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -3px;
+    cursor: pointer;
+    border-width: 6px;
+    border-top-color: #c2c2c2;
+    border-top-style: solid;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+}
+
+.iui-form-select dl {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 42px;
+    padding: 5px 0;
+    z-index: 999;
+    min-width: 100%;
+    border: 1px solid #d2d2d2;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+    box-sizing: border-box;
+}
+
+.iui-form-select dl dt,
+.iui-form-select dl dd {
+    padding: 0 10px;
+    line-height: 36px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.iui-form-select dl dt {
+    font-size: 12px;
+    color: #999;
+}
+
+.iui-form-select dl dd {
+    cursor: pointer;
+}
+
+.iui-form-select dl dd:hover {
+    background-color: #f2f2f2;
+}
+
+.iui-form-select .iui-select-group dd {
+    padding-left: 20px;
+}
+
+.iui-form-select dl dd.iui-select-tips {
+    padding-left: 10px !important;
+    color: #999;
+}
+
+.iui-form-select dl dd.iui-this {
+    background-color: #5FB878;
+    color: #fff;
+}
+
+.iui-form-select dl dd.iui-disabled {
+    background-color: #fff;
+}
+
+.iui-form-selected dl {
+    display: block;
+}
+
+.iui-form-selected .iui-edge {
+    margin-top: -9px;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.iui-form-selected .iui-edge {
+    margin-top: -3px\0;
+}
+
+:root .iui-form-selected .iui-edge {
+    margin-top: -9px\0/IE9;
+}
+
+.iui-form-selectup dl {
+    top: auto;
+    bottom: 42px;
+}
+
+.iui-select-none {
+    margin: 5px 0;
+    text-align: center;
+    color: #999;
+}
+
+.iui-select-disabled .iui-disabled {
+    border-color: #eee !important;
+}
+
+.iui-select-disabled .iui-edge {
+    border-top-color: #d2d2d2
+}
+
+
+/* 复选框 */
+
+.iui-form-checkbox {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    height: 30px;
+    line-height: 28px;
+    margin-right: 10px;
+    padding-right: 30px;
+    border: 1px solid #d2d2d2;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 0;
+    border-radius: 2px;
+    -webkit-transition: .1s linear;
+    transition: .1s linear;
+    box-sizing: border-box;
+}
+
+.iui-form-checkbox:hover {
+    border: 1px solid #c2c2c2;
+}
+
+.iui-form-checkbox * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.iui-form-checkbox span {
+    padding: 0 10px;
+    height: 100%;
+    font-size: 14px;
+    background-color: #d2d2d2;
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.iui-form-checkbox:hover span {
+    background-color: #c2c2c2;
+}
+
+.iui-form-checkbox i {
+    position: absolute;
+    right: 0;
+    width: 30px;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+}
+
+.iui-form-checkbox:hover i {
+    color: #c2c2c2;
+}
+
+.iui-form-checked,
+.iui-form-checked:hover {
+    border-color: #5FB878;
+}
+
+.iui-form-checked span,
+.iui-form-checked:hover span {
+    background-color: #5FB878;
+}
+
+.iui-form-checked i,
+.iui-form-checked:hover i {
+    color: #5FB878;
+}
+
+.iui-form-item .iui-form-checkbox {
+    margin-top: 4px;
+}
+
+
+/* 复选框-原始风格 */
+
+.iui-form-checkbox[skin="primary"] {
+    height: auto!important;
+    line-height: normal!important;
+    border: none!important;
+    margin-right: 0;
+    padding-right: 0;
+    background: none;
+}
+
+.iui-form-checkbox[skin="primary"] span {
+    float: right;
+    padding-right: 15px;
+    line-height: 18px;
+    background: none;
+    color: #666;
+}
+
+.iui-form-checkbox[skin="primary"] i {
+    position: relative;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    border: 1px solid #d2d2d2;
+    font-size: 12px;
+    border-radius: 2px;
+    background-color: #fff;
+    -webkit-transition: .1s linear;
+    transition: .1s linear;
+}
+
+.iui-form-checkbox[skin="primary"]:hover i {
+    border-color: #5FB878;
+    color: #fff;
+}
+
+.iui-form-checked[skin="primary"] i {
+    border-color: #5FB878;
+    background-color: #5FB878;
+    color: #fff;
+}
+
+.iui-checkbox-disbaled[skin="primary"] span {
+    background: none!important;
+    color: #c2c2c2;
+}
+
+.iui-checkbox-disbaled[skin="primary"]:hover i {
+    border-color: #d2d2d2;
+}
+
+.iui-form-item .iui-form-checkbox[skin="primary"] {
+    margin-top: 10px;
+}
+
+
+/* 复选框-开关风格 */
+
+.iui-form-switch {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    height: 22px;
+    line-height: 22px;
+    width: 42px;
+    padding: 0 5px;
+    margin-top: 8px;
+    border: 1px solid #d2d2d2;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #fff;
+    -webkit-transition: .1s linear;
+    transition: .1s linear;
+}
+
+.iui-form-switch i {
+    position: absolute;
+    left: 5px;
+    top: 3px;
+    width: 16px;
+    height: 16px;
+    border-radius: 20px;
+    background-color: #d2d2d2;
+    -webkit-transition: .1s linear;
+    transition: .1s linear;
+}
+
+.iui-form-switch em {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    width: 25px;
+    padding: 0!important;
+    text-align: center!important;
+    color: #999!important;
+    font-style: normal!important;
+    font-size: 12px;
+}
+
+.iui-form-onswitch {
+    border-color: #5FB878;
+    background-color: #5FB878;
+}
+
+.iui-form-onswitch i {
+    left: 32px;
+    background-color: #fff;
+}
+
+.iui-form-onswitch em {
+    left: 5px;
+    right: auto;
+    color: #fff!important;
+}
+
+.iui-checkbox-disbaled {
+    border-color: #e2e2e2 !important;
+}
+
+.iui-checkbox-disbaled span {
+    background-color: #e2e2e2 !important;
+}
+
+.iui-checkbox-disbaled:hover i {
+    color: #fff !important;
+}
+
+
+/* 单选框 */
+
+.iui-form-radio {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 28px;
+    margin: 6px 10px 0 0;
+    padding-right: 10px;
+    cursor: pointer;
+    font-size: 0;
+}
+
+.iui-form-radio * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.iui-form-radio i {
+    margin-right: 8px;
+    font-size: 22px;
+    color: #c2c2c2;
+}
+
+.iui-form-radio span {
+    font-size: 14px;
+}
+
+.iui-form-radioed i,
+.iui-form-radio i:hover {
+    color: #5FB878;
+}
+
+.iui-radio-disbaled i {
+    color: #e2e2e2 !important;
+}
+
+
+/* 表单方框风格 */
+
+.iui-form-pane .iui-form-label {
+    width: 110px;
+    padding: 8px 15px;
+    height: 38px;
+    line-height: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px 0 0 2px;
+    text-align: center;
+    background-color: #FBFBFB;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+}
+
+.iui-form-pane .iui-input-inline {
+    margin-left: -1px;
+}
+
+.iui-form-pane .iui-input-block {
+    margin-left: 110px;
+    left: -1px;
+}
+
+.iui-form-pane .iui-input {
+    border-radius: 0 2px 2px 0;
+}
+
+.iui-form-pane .iui-form-text .iui-form-label {
+    float: none;
+    width: 100%;
+    border-radius: 2px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.iui-form-pane .iui-form-text .iui-input-inline {
+    display: block;
+    margin: 0;
+    top: -1px;
+    clear: both;
+}
+
+.iui-form-pane .iui-form-text .iui-input-block {
+    margin: 0;
+    left: 0;
+    top: -1px;
+}
+
+.iui-form-pane .iui-form-text .iui-textarea {
+    min-height: 100px;
+    border-radius: 0 0 2px 2px;
+}
+
+.iui-form-pane .iui-form-checkbox {
+    margin: 4px 0 4px 10px;
+}
+
+.iui-form-pane .iui-form-switch,
+.iui-form-pane .iui-form-radio {
+    margin-top: 6px;
+    margin-left: 10px;
+}
+
+.iui-form-pane .iui-form-item[pane] {
+    position: relative;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.iui-form-pane .iui-form-item[pane] .iui-form-label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-width: 0px;
+    border-right-width: 1px;
+}
+
+.iui-form-pane .iui-form-item[pane] .iui-input-inline {
+    margin-left: 110px;
+}
+
+
+/** 表单响应式 **/
+
+@media screen and (max-width: 450px) {
+    .iui-form-item .iui-form-label {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .iui-form-item .iui-inline {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 20px;
+        clear: both;
+    }
+    .iui-form-item .iui-inline:after {
+        content: '\20';
+        clear: both;
+        display: block;
+        height: 0;
+    }
+    .iui-form-item .iui-input-inline {
+        display: block;
+        float: none;
+        left: -3px;
+        width: auto;
+        margin: 0 0 10px 112px;
+    }
+    .iui-form-item .iui-input-inline+.iui-form-mid {
+        margin-left: 110px;
+        top: -5px;
+        padding: 0;
+    }
+    .iui-form-item .iui-form-checkbox {
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/iui.min.css" />
+		<script type="text/javascript">
+			var GV = {
+				ASSETS_ROOT: "//localhost:8082",
+				VERSION:"1.0"
+			};
+		</script>
+
+		<script type="text/javascript" src="../../../assets/libs/jquery/2.1.4/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="../js/iui.js"></script>
+
+	</head>
+
+	<body>
+<button id="download">Create download task</button>
+<video id="media" width="352" height="264" controls  autoplay="autoplay">
+    <source id="tt" src="http://192.168.0.102:8081/assets/img/bonus/WeChatSight3.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+</video>
+ooo
+
+		<script>
+			(function($,iui, doc) {
+			document.addEventListener( "plusready", onPlusReady, false );
+			var r = null; 
+			// 扩展API加载完毕，现在可以正常调用扩展API 
+			function onPlusReady() {
+			}
+			// 创建下载任务
+			function createDownload() {
+				var dtask = plus.downloader.createDownload( "http://192.168.0.102:8081/assets/img/bonus/WeChatSight4.mp4", {}, function ( d, status ) {
+					// 下载完成
+					if ( status == 200 ) { 
+						alert( "Download success: " + d.filename );
+						var path=plus.io.convertLocalFileSystemURL(d.filename);
+
+						var t="file://"+path;
+
+						document.getElementById("tt").src=t;
+						document.getElementById("media").load();
+					} else {
+						 alert( "Download failed: " + status ); 
+					}  
+				});
+				//dtask.addEventListener( "statechanged", onStateChanged, false );
+				dtask.start(); 
+			}
+			$("#download").on("tap",function(e){
+				createDownload();
+			});
+			}(jQuery,iui, document));
+		</script>
+
+	</body>
+	
+
+</html>

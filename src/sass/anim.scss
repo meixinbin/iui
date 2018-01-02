@@ -1,0 +1,216 @@
+
+/** 动画 **/
+
+.iui-anim {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.iui-anim.iui-icon {
+    display: inline-block;
+}
+
+.iui-anim-loop {
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes iui-rotate {
+    /* 循环旋转 */
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes iui-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.iui-anim-rotate {
+    -webkit-animation-name: iui-rotate;
+    animation-name: iui-rotate;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+
+@-webkit-keyframes iui-up {
+    /* 从最底部往上滑入 */
+    from {
+        -webkit-transform: translate3d(0, 100%, 0);
+        opacity: 0.3;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes iui-up {
+    from {
+        transform: translate3d(0, 100%, 0);
+        opacity: 0.3;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+.iui-anim-up {
+    -webkit-animation-name: iui-up;
+    animation-name: iui-up;
+}
+
+@-webkit-keyframes iui-upbit {
+    /* 微微往上滑入 */
+    from {
+        -webkit-transform: translate3d(0, 30px, 0);
+        opacity: 0.3;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes iui-upbit {
+    from {
+        transform: translate3d(0, 30px, 0);
+        opacity: 0.3;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+.iui-anim-upbit {
+    -webkit-animation-name: iui-upbit;
+    animation-name: iui-upbit;
+}
+
+@-webkit-keyframes iui-scale {
+    /* 放大 */
+    0% {
+        opacity: 0.3;
+        -webkit-transform: scale(.5);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+    }
+}
+
+@keyframes iui-scale {
+    0% {
+        opacity: 0.3;
+        -ms-transform: scale(.5);
+        transform: scale(.5);
+    }
+    100% {
+        opacity: 1;
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.iui-anim-scale {
+    -webkit-animation-name: iui-scale;
+    animation-name: iui-scale
+}
+
+@-webkit-keyframes iui-scale-spring {
+    /* 弹簧式放大 */
+    0% {
+        opacity: 0.5;
+        -webkit-transform: scale(.5);
+    }
+    80% {
+        opacity: 0.8;
+        -webkit-transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+    }
+}
+
+@keyframes iui-scale-spring {
+    0% {
+        opacity: 0.5;
+        transform: scale(.5);
+    }
+    80% {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.iui-anim-scaleSpring {
+    -webkit-animation-name: iui-scale-spring;
+    animation-name: iui-scale-spring
+}
+
+@-webkit-keyframes iui-fadein {
+    /* 渐现 */
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes iui-fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.iui-anim-fadein {
+    -webkit-animation-name: iui-fadein;
+    animation-name: iui-fadein
+}
+
+@-webkit-keyframes iui-fadeout {
+    /* 渐隐 */
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes iui-fadeout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.iui-anim-fadeout {
+    -webkit-animation-name: iui-fadeout;
+    animation-name: iui-fadeout
+}

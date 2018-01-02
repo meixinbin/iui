@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>iuiAdmin - 单页面后台管理模板系统</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link type="text/css" rel="stylesheet" href="../../../dist/css/iui.min.css" media="all">
+		<link type="text/css" rel="stylesheet" href="../css/modules/layer/default/layer.css" media="all">
+		<link type="text/css" rel="stylesheet" href="../../../dist/admin/css/admin.css" media="all">
+		<link type="text/css" rel="stylesheet" href="../../../dist/css/icons.css" media="all">
+	</head>
+	<body class="iui-layout-body">
+		<div id="iui-app" class="">
+		<div class="iui-layout iui-layout-admin">
+			<header class="iui-header">
+				<div class="iui-logo" lay-href="">
+					<a>iui 后台管理模板</a>
+				</div>
+				<!-- 头部区域 -->
+				<ul class="iui-nav iui-layout-left">
+					<li class="iui-nav-item layadmin-flexible" lay-unselect="">
+						<a href="javascript:;" layadmin-event="flexible" title="侧边伸缩">
+							<i class="iui-icon iui-icon-shrink-right" id="iui_app_flexible"></i>
+						</a>
+					</li>
+					<li class="iui-nav-item iui-this iui-hide-xs iui-hide-sm iui-show-md-inline-block">
+						<a lay-href="" title="">
+							控制台
+						</a>
+					</li>
+					<li class="iui-nav-item iui-hide-xs iui-hide-sm iui-show-md-inline-block">
+						<a href="http://www.iui.com/admin/" target="_blank" title="">
+							前台
+						</a>
+					</li>
+					<li class="iui-nav-item iui-hide-xs iui-hide-sm iui-show-md-inline-block">
+						<a href="http://fly.iui.com/" target="_blank" title="社区">
+							社区
+						</a>
+					</li>
+					<li class="iui-nav-item iui-hide-xs" lay-unselect="">
+						<a href="javascript:;" layadmin-event="refresh" title="刷新">
+							<i class="iui-icon iui-icon-refresh"></i>
+						</a>
+					</li>
+					<span class="iui-nav-bar" style="left: 312px; top: 47px; width: 0px; opacity: 0;"></span></ul>
+				<ul class="iui-nav iui-layout-right">
+					<li class="iui-nav-item" lay-unselect="">
+						<a lay-href="app/message/" layadmin-event="message">
+							<i class="iui-icon iui-icon-notice"></i>
+							<span class="iui-badge-dot"></span>
+						</a>
+					</li>
+					<li class="iui-nav-item iui-hide-xs" lay-unselect="">
+						<a href="javascript:;" layadmin-event="theme">
+							<i class="iui-icon iui-icon-theme"></i>
+						</a>
+					</li>
+					<li class="iui-nav-item iui-hide-xs" lay-unselect="">
+						<a href="javascript:;" layadmin-event="note">
+							<i class="iui-icon iui-icon-note"></i>
+						</a>
+					</li>
+					<li class="iui-nav-item">
+						<a href="javascript:;"> <cite>梅心斌</cite> <span class="iui-nav-more"></span></a>
+						<dl class="iui-nav-child iui-anim iui-anim-upbit">
+							<dd>
+								<a lay-href="user/set">基本资料</a>
+							</dd>
+							<dd>
+								<a lay-href="user/log">操作日志</a>
+							</dd>
+							<hr>
+							<dd>
+								<a lay-href="login">退出</a>
+							</dd>
+						</dl>
+					</li>
+
+					<li class="iui-nav-item iui-hide-xs" lay-unselect="">
+						<a href="javascript:;" layadmin-event="about"><i class="iui-icon iui-icon-more-vertical"></i></a>
+					</li>
+					<li class="iui-nav-item iui-show-xs-inline-block iui-hide-sm" lay-unselect="">
+						<a href="javascript:;" layadmin-event="more"><i class="iui-icon iui-icon-more-vertical"></i></a>
+					</li>
+					<span class="iui-nav-bar"></span></ul>
+			</header>
+			<aside class="layadmin-fixed">
+				<!-- 左侧主菜单 -->
+				<div class="iui-side iui-side-menu">
+					<div class="iui-side-scroll">
+						<ul id="iui-sidebar" class="side-main">
+							<li data-id="sb00" data-name="component"><a href="welcome.html"> <i class="iui-icon iui-icon-home"></i>首页</a> </li>
+							<li data-id="sb0" data-name="component"> <i class="iui-icon iui-icon-component"></i>组件 </li>
+							<li data-id="sb1" data-name="template" href="template/tips/404"> <i class="iui-icon iui-icon-template"></i>模板 </li>
+							<li data-id="sb2" data-name="app" href="app/message/"> <i class="iui-icon iui-icon-app"></i>应用 </li>
+							<li data-id="sb3" data-name="senior" href="senior/im/chat"> <i class="iui-icon iui-icon-senior"></i>高级 </li>
+							<li data-id="sb4" data-name="user" href="user/user/list"> <i class="iui-icon iui-icon-user"></i>用户 </li>
+							<li data-id="sb5" data-name="set" href="set/base/website"> <i class="iui-icon iui-icon-set"></i>设置 </li>
+							<li data-id="sb6" data-name="get" href="system/get"> <i class="iui-icon iui-icon-auz"></i>授权 </li>
+						</ul>
+					</div>
+				</div>
+				<!-- 根据二级菜单情况，自动切换伸缩状态 -->
+				<!-- 左侧子菜单 -->
+				<div class="iui-side iui-side-child">
+					<div class="iui-side-scroll">
+						<div class="iui-menu-item" data-pid="sb0">
+							<ul class="iui-nav iui-nav-tree">
+								<li class="iui-nav-item iui-this iui-nav-itemed" style="">
+									<a href="component/grid/list.html"> 栅格 <span class="iui-nav-more"></span></a>
+									<dl class="iui-nav-child">
+										<dd>
+											<a href="component/grid/list.html">等比例列表排列</a>
+										</dd>
+										<dd>
+											<a href="component/grid/mobile.html">按移动端排列</a>
+										</dd>
+										<dd>
+											<a href="component/grid/mobile-pc.html">移动桌面端组合</a>
+										</dd>
+										<dd>
+											<a href="component/grid/all.html">全端复杂组合</a>
+										</dd>
+										<dd>
+											<a href="component/grid/stack.html">低于桌面堆叠排列</a>
+										</dd>
+										<dd>
+											<a href="component/grid/speed-dial.html">九宫格</a>
+										</dd>
+									</dl>
+								</li>
+								<li class="iui-nav-item  " style="">
+									<a href="component/button.html"> 按钮 </a>
+								</li>
+								<li class="iui-nav-item  " style="">
+									<a href="component/form/element.html"> 表单 <span class="iui-nav-more"></span></a>
+									<dl class="iui-nav-child">
+										<dd>
+											<a href="component/form/element.html">表单元素</a>
+										</dd>
+										<dd>
+											<a href="component/form/group.html">表单组合</a>
+										</dd>
+									</dl>
+								</li>
+								<li class="iui-nav-item  " style="">
+									<a href="component/nav.html"> 导航 </a>
+								</li>
+								<li class="iui-nav-item  " style="">
+									<a href="component/tabs.html"> 选项卡 </a>
+								</li>
+								<li class="iui-nav-item  " style="">
+									<a href="component/progress.html"> 进度条 </a>
+								</li>
+								<li class="iui-nav-item  " style="">
+									<a href="component/panel.html"> 面板 </a>
+								</li>
+								<li class="iui-nav-item  " style="">
+									<a href="component/badge.html"> 徽章 </a>
+								</li>
+								<li class="iui-nav-item  " style="">
+									<a href="component/timeline.html"> 时间线 </a>
+								</li>
+								<li class="iui-nav-item  " style="">
+									<a href="component/anim.html"> 动画 </a>
+								</li>
+								<li class="iui-nav-item  " style="">
+									<a href="component/auxiliar.html"> 辅助 </a>
+								</li>
+								<li class="iui-nav-item  " style="">
+									<a href="component/layer/list.html"> 通用弹层 <span class="iui-nav-more"></span></a>
+									<dl class="iui-nav-child">
+										<dd>
+											<a href="component/layer/list">常规功能</a>
+										</dd>
+										<dd>
+											<a href="component/layer/special-demo.html">特殊示例</a>
+										</dd>
+										<dd>
+											<a href="component/layer/theme.html">风格定制</a>
+										</dd>
+									</dl>
+								</li>
+								<li class="iui-nav-item  " style="">
+									<a href="javascript:;" lay-href="senior/im/chat"> 即时聊天 </a>
+								</li>
+								<li class="iui-nav-item  ">
+									<a href="javascript:;" lay-href="component/laydate/"> 日期时间 </a>
+								</li>
+								<li class="iui-nav-item  " style="">
+									<a href="javascript:;" lay-href="component/table/"> 表格 </a>
+								</li>
+								<li class="iui-nav-item  ">
+									<a href="javascript:;" lay-href="component/laypage/"> 分页 </a>
+								</li>
+								<li class="iui-nav-item  ">
+									<a href="javascript:;" lay-href="component/upload/"> 上传 </a>
+								</li>
+								<li class="iui-nav-item  ">
+									<a href="javascript:;" lay-href="component/carousel/"> 轮播 </a>
+								</li>
+								<li class="iui-nav-item  ">
+									<a href="javascript:;" lay-href="component/laytpl/"> 模板引擎 </a>
+								</li>
+								<li class="iui-nav-item  ">
+									<a href="javascript:;" lay-href="component/flow/"> 流加载 </a>
+								</li>
+								<li class="iui-nav-item  ">
+									<a href="javascript:;" lay-href="component/util/"> 工具 </a>
+								</li>
+								<li class="iui-nav-item  ">
+									<a href="javascript:;" lay-href="component/code/"> 代码修饰 </a>
+								</li> <span class="iui-nav-bar" style="top: 15px; height: 0px; opacity: 0;"></span></ul>
+						</div>
+						
+						<div class="iui-menu-item " data-pid="sb1">
+							<ul class="iui-nav iui-nav-tree" lay-filter="layadmin-side-child">
+								<li class="iui-nav-item  ">
+									<a href="javascript:;"> 提示页面 <span class="iui-nav-more"></span></a>
+									<dl class="iui-nav-child">
+										<dd>
+											<a href="template/tips/404.html">404</a>
+										</dd>
+										<dd>
+											<a href="template/tips/error.html">错误提示</a>
+										</dd>
+									</dl>
+								</li> <span class="iui-nav-bar"></span></ul>
+						</div>
+						<div class="iui-menu-item " data-pid="sb2">
+							<ul class="iui-nav iui-nav-tree" lay-filter="layadmin-side-child">
+								<li class="iui-nav-item  ">
+									<a href="app/message.html"> 消息中心 </a>
+								</li>
+								<li class="iui-nav-item  iui-nav-itemed ">
+									<a href="javascript:;"> 内容系统 <span class="iui-nav-more"></span></a>
+									<dl class="iui-nav-child">
+										<dd>
+											<a lay-href="app/content/list">所有文章</a>
+										</dd>
+										<dd>
+											<a lay-href="app/content/comment">评论管理</a>
+										</dd>
+										<dd>
+											<a lay-href="app/content/tags">标签管理</a>
+										</dd>
+									</dl>
+								</li>
+								<li class="iui-nav-item  iui-nav-itemed ">
+									<a href="javascript:;"> 社区系统 <span class="iui-nav-more"></span></a>
+									<dl class="iui-nav-child">
+										<dd>
+											<a lay-href="app/forum/list">全部帖子</a>
+										</dd>
+										<dd>
+											<a lay-href="app/forum/replys">所有回帖</a>
+										</dd>
+									</dl>
+								</li>
+								<li class="iui-nav-item  iui-nav-itemed ">
+									<a href="javascript:;"> 商品管理 <span class="iui-nav-more"></span></a>
+									<dl class="iui-nav-child">
+										<dd>
+											<a lay-href="app/mall/list">商品列表</a>
+										</dd>
+										<dd>
+											<a lay-href="app/mall/category">分类管理</a>
+										</dd>
+										<dd>
+											<a lay-href="app/mall/sku">规格管理</a>
+										</dd>
+									</dl>
+								</li> <span class="iui-nav-bar"></span></ul>
+						</div>
+						<div class="iui-menu-item " data-pid="sb3">
+							<ul class="iui-nav iui-nav-tree" lay-filter="layadmin-side-child">
+								<li class="iui-nav-item  iui-nav-itemed ">
+									<a href="javascript:;"> 通讯系统 <span class="iui-nav-more"></span></a>
+									<dl class="iui-nav-child">
+										<dd>
+											<a lay-href="senior/im/chat">社交聊天</a>
+										</dd>
+										<dd>
+											<a lay-href="senior/im/kefu">客服系统</a>
+										</dd>
+									</dl>
+								</li>
+								<li class="iui-nav-item  iui-nav-itemed ">
+									<a href="javascript:;"> Echarts 集成 <span class="iui-nav-more"></span></a>
+									<dl class="iui-nav-child">
+										<dd>
+											<a lay-href="senior/echarts/line">折线图</a>
+										</dd>
+										<dd>
+											<a lay-href="senior/echarts/bar">柱状图</a>
+										</dd>
+										<dd>
+											<a lay-href="senior/echarts/map">地图</a>
+										</dd>
+									</dl>
+								</li> <span class="iui-nav-bar"></span></ul>
+						</div>
+						<div class="iui-menu-item " data-pid="sb4">
+							<ul class="iui-nav iui-nav-tree" lay-filter="layadmin-side-child">
+								<li class="iui-nav-item  iui-nav-itemed ">
+									<a href="javascript:;"> 用户 <span class="iui-nav-more"></span></a>
+									<dl class="iui-nav-child">
+										<dd>
+											<a lay-href="user/user/list">用户列表</a>
+										</dd>
+									</dl>
+								</li>
+								<li class="iui-nav-item  iui-nav-itemed ">
+									<a href="javascript:;"> 后台管理组 <span class="iui-nav-more"></span></a>
+									<dl class="iui-nav-child">
+										<dd>
+											<a lay-href="user/administrators/list">管理员列表</a>
+										</dd>
+										<dd>
+											<a lay-href="user/administrators/role">角色管理</a>
+										</dd>
+									</dl>
+								</li> <span class="iui-nav-bar"></span></ul>
+						</div>
+						<div class="iui-menu-item " data-pid="sb5">
+							<ul class="iui-nav iui-nav-tree" lay-filter="layadmin-side-child">
+								<li class="iui-nav-item  iui-nav-itemed ">
+									<a href="javascript:;"> 基本设置 <span class="iui-nav-more"></span></a>
+									<dl class="iui-nav-child">
+										<dd>
+											<a lay-href="set/base/website">系统设置</a>
+										</dd>
+										<dd>
+											<a lay-href="set/base/email">邮件服务</a>
+										</dd>
+									</dl>
+								</li>
+								<li class="iui-nav-item  ">
+									<a href="javascript:;" lay-href="set/security/"> 安全设置 </a>
+								</li> <span class="iui-nav-bar"></span></ul>
+						</div>
+						<div class="iui-menu-item " data-pid="sb6">
+							<ul class="iui-nav iui-nav-tree" lay-filter="layadmin-side-child"> <span class="iui-nav-bar"></span></ul>
+						</div>
+					</div>
+				</div>
+			</aside>
+			<div class="iui-body" id="app_body">
+			</div>
+		</div>
+		</div>
+		<script type="text/javascript" src="//localhost:8082/iui/dist/iui.js?v=1"></script>
+		<script>
+			iui.use("jquery","//localhost:8082/iui/examples/admin/js/iui-admin.js",function(){
+				
+			});
+		</script>
+	</body>
+</html>

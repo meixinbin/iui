@@ -1,0 +1,111 @@
+/* 基本布局 */
+
+.iui-main {
+    position: relative;
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.iui-header {
+    position: relative;
+    z-index: 1000;
+    height: 60px;
+}
+
+.iui-header a:hover {
+    transition: all .5s;
+    -webkit-transition: all .5s;
+}
+
+.iui-side {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 999;
+    width: 200px;
+    overflow-x: hidden;
+}
+
+.iui-side-scroll {
+    width: 220px;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.iui-body {
+    position: absolute;
+    left: 200px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 998;
+    width: auto;
+    overflow: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+/* 后台框架大布局 */
+
+.iui-layout-body {
+    overflow: hidden;
+}
+
+.iui-layout-admin .iui-header {
+    background-color: #23262E;
+}
+
+.iui-layout-admin .iui-side {
+    top: 60px;
+    width: 200px;
+    overflow-x: hidden;
+}
+
+.iui-layout-admin .iui-body {
+    top: 60px;
+    bottom: 44px;
+}
+
+.iui-layout-admin .iui-main {
+    width: auto;
+    margin: 0 15px;
+}
+
+.iui-layout-admin .iui-footer {
+    position: fixed;
+    left: 200px;
+    right: 0;
+    bottom: 0;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 15px;
+    background-color: #eee;
+}
+
+.iui-layout-admin .iui-logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    line-height: 60px;
+    text-align: center;
+    color: #009688;
+    font-size: 16px;
+}
+
+.iui-layout-admin .iui-header .iui-nav {
+    background: none;
+}
+
+.iui-layout-left {
+    position: absolute !important;
+    left: 200px;
+    top: 0;
+}
+
+.iui-layout-right {
+    position: absolute !important;
+    right: 0;
+    top: 0;
+}

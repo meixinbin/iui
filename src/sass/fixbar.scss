@@ -1,0 +1,35 @@
+/** fixbar **/
+
+.iui-fixbar {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    z-index: 9999;
+}
+
+.iui-fixbar li {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 1px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 30px;
+    background-color: #9F9F9F;
+    color: #fff;
+    border-radius: 2px;
+    opacity: 0.95;
+}
+
+.iui-fixbar li:hover {
+    opacity: 0.85;
+}
+
+.iui-fixbar li:active {
+    opacity: 1;
+}
+
+.iui-fixbar .iui-fixbar-top {
+    display: none;
+    font-size: 40px;
+}

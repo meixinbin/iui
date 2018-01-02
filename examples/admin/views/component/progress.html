@@ -1,0 +1,116 @@
+<div>
+<div class="iui-card layadmin-header">
+  <div class="iui-breadcrumb" lay-filter="breadcrumb" style="visibility: visible;">
+    <a lay-href="">主页</a><span lay-separator="">/</span>
+    <a><cite>组件</cite></a><span lay-separator="">/</span>
+    <a><cite>进度条</cite></a>
+  </div>
+</div>
+
+<style>
+/* 这段样式只是用于演示 */
+.iui-progress{margin: 20px 0;}
+</style>
+
+<div class="iui-fluid">
+  <div class="iui-row iui-col-space15">
+    <div class="iui-col-md12">
+      <div class="iui-card">
+        <div class="iui-card-header">默认进度条</div>
+        <div class="iui-card-body">
+        
+          <div class="iui-progress">
+            <div class="iui-progress-bar" lay-percent="50%" style="width: 50%;"></div>
+          </div>
+          <div class="iui-row iui-col-space15">
+            <div class="iui-col-xs6">
+              <div class="iui-progress">
+                <div class="iui-progress-bar" lay-percent="50%" style="width: 50%;"></div>
+              </div>
+            </div>
+            <div class="iui-col-xs6">
+              <div class="iui-progress">
+                <div class="iui-progress-bar" lay-percent="50%" style="width: 50%;"></div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="iui-col-md12">
+      <div class="iui-card">
+        <div class="iui-card-header">更多颜色进度条</div>
+        <div class="iui-card-body">
+        
+          <div class="iui-progress">
+            <div class="iui-progress-bar iui-bg-red" lay-percent="20%" style="width: 20%;"></div>
+          </div>
+
+          <div class="iui-progress">
+            <div class="iui-progress-bar iui-bg-orange" lay-percent="30%" style="width: 30%;"></div>
+          </div>
+
+          <div class="iui-progress">
+            <div class="iui-progress-bar iui-bg-green" lay-percent="40%" style="width: 40%;"></div>
+          </div>
+
+          <div class="iui-progress">
+            <div class="iui-progress-bar iui-bg-blue" lay-percent="50%" style="width: 50%;"></div>
+          </div>
+
+          <div class="iui-progress">
+            <div class="iui-progress-bar iui-bg-cyan" lay-percent="60%" style="width: 60%;"></div>
+          </div>
+          
+          <div class="iui-progress iui-progress-big">
+            <div class="iui-progress-bar" lay-percent="20%" style="width: 20%;"></div>
+          </div>
+          <div class="iui-progress iui-progress-big">
+            <div class="iui-progress-bar iui-bg-green" lay-percent="35%" style="width: 35%;"></div>
+          </div>
+          <div class="iui-progress iui-progress-big">
+            <div class="iui-progress-bar iui-bg-cyan" lay-percent="75%" style="width: 75%;"></div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="iui-col-md12">
+      <div class="iui-card">
+        <div class="iui-card-header">动态改变进度</div>
+        <div class="iui-card-body">
+
+            <div class="iui-progress iui-progress-big" lay-showpercent="true" lay-filter="component-progress-demo">
+              <div class="iui-progress-bar iui-bg-red" lay-percent="0%" style="width: 0%;"><span class="iui-progress-text">0%</span></div>
+            </div>
+             
+            <div class="iui-btn-container" style="margin-top: 20px; margin-bottom: 0;">
+              <button class="iui-btn site-demo-active" data-type="setPercent">设置50%</button>
+              <button class="iui-btn site-demo-active" data-type="loading">模拟loading</button>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="iui-col-md12">
+      <div class="iui-card">
+        <div class="iui-card-header">显示进度比文本</div>
+        <div class="iui-card-body">
+
+          <div class="iui-progress" lay-showpercent="true">
+            <div class="iui-progress-bar" lay-percent="20%" style="width: 20%;"><span class="iui-progress-text">20%</span></div>
+          </div>
+          <div class="iui-progress" lay-showpercent="true">
+            <div class="iui-progress-bar" lay-percent="5 / 10" style="width: 50%;"><span class="iui-progress-text">5 / 10</span></div>
+          </div>
+          <div class="iui-progress iui-progress-big" lay-showpercent="true">
+            <div class="iui-progress-bar" lay-percent="70%" style="width: 70%;"><span class="iui-progress-text">70%</span></div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

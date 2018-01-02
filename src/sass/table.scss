@@ -1,0 +1,439 @@
+/** 表格 **/
+
+.iui-table {
+    width: 100%;
+    margin: 10px 0;
+    background-color: #fff;
+    color: #666;
+}
+
+.iui-table tr {
+    transition: all .3s;
+    -webkit-transition: all .3s;
+}
+
+.iui-table th {
+    text-align: left;
+    font-weight: 400;
+}
+
+.iui-table thead tr,
+.iui-table-header,
+.iui-table-tool,
+.iui-table-patch,
+.iui-table-mend,
+.iui-table[lay-even] tr:nth-child(even),
+.iui-table tbody tr:hover,
+.iui-table-hover,
+.iui-table-click {
+    background-color: #f2f2f2;
+}
+
+.iui-table th,
+.iui-table td,
+.iui-table[lay-skin="line"],
+.iui-table[lay-skin="row"],
+.iui-table-view,
+.iui-table-header,
+.iui-table-tool,
+.iui-table-page,
+.iui-table-fixed-r,
+.iui-table-tips-main {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e6e6e6;
+}
+
+.iui-table th,
+.iui-table td {
+    position: relative;
+    padding: 9px 15px;
+    min-height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.iui-table[lay-skin="line"] th,
+.iui-table[lay-skin="line"] td {
+    border-width: 0;
+    border-bottom-width: 1px;
+}
+
+.iui-table[lay-skin="row"] th,
+.iui-table[lay-skin="row"] td {
+    border-width: 0;
+    border-right-width: 1px;
+}
+
+.iui-table[lay-skin="nob"] th,
+.iui-table[lay-skin="nob"] td {
+    border: none;
+}
+
+.iui-table img {
+    max-width: 100px;
+}
+
+
+/* 大表格 */
+
+.iui-table[lay-size="lg"] th,
+.iui-table[lay-size="lg"] td {
+    padding-top: 15px;
+    padding-right: 30px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+}
+
+.iui-table-view .iui-table[lay-size="lg"] .iui-table-cell {
+    height: 40px;
+    line-height: 40px;
+}
+
+
+/* 小表格 */
+
+.iui-table[lay-size="sm"] th,
+.iui-table[lay-size="sm"] td {
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    font-size: 12px;
+}
+
+.iui-table-view .iui-table[lay-size="sm"] .iui-table-cell {
+    height: 20px;
+    line-height: 20px;
+}
+
+
+/* 数据表格 */
+
+.iui-table[lay-data] {
+    display: none;
+}
+
+.iui-table-view,
+.iui-table-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.iui-table-view {
+    margin: 10px 0;
+}
+
+.iui-table-view .iui-table {
+    position: relative;
+    width: auto;
+    margin: 0;
+}
+
+.iui-table-view .iui-table[lay-skin="line"] {
+    border-width: 0;
+    border-right-width: 1px;
+}
+
+.iui-table-view .iui-table[lay-skin="row"] {
+    border-width: 0;
+    border-bottom-width: 1px;
+}
+
+.iui-table-view .iui-table th,
+.iui-table-view .iui-table td {
+    padding: 5px 0;
+    border-top: none;
+    border-left: none;
+}
+
+.iui-table-view .iui-table td {
+    cursor: default;
+}
+
+.iui-table-view .iui-form-checkbox[lay-skin="primary"] i {
+    width: 18px;
+    height: 18px;
+}
+
+.iui-table-header {
+    border-width: 0;
+    border-bottom-width: 1px;
+    overflow: hidden;
+}
+
+.iui-table-header .iui-table {
+    margin-bottom: -1px;
+}
+
+.iui-table-sort {
+    width: 10px;
+    height: 20px;
+    margin-left: 5px;
+    cursor: pointer!important;
+}
+
+.iui-table-sort .iui-edge {
+    position: absolute;
+    left: 5px;
+    border-width: 5px;
+}
+
+.iui-table-sort .iui-table-sort-asc {
+    top: 4px;
+    border-top: none;
+    border-bottom-style: solid;
+    border-bottom-color: #b2b2b2;
+}
+
+.iui-table-sort .iui-table-sort-asc:hover {
+    border-bottom-color: #666;
+}
+
+.iui-table-sort .iui-table-sort-desc {
+    bottom: 4px;
+    border-bottom: none;
+    border-top-style: solid;
+    border-top-color: #b2b2b2;
+}
+
+.iui-table-sort .iui-table-sort-desc:hover {
+    border-top-color: #666;
+}
+
+.iui-table-sort[lay-sort="asc"] .iui-table-sort-asc {
+    border-bottom-color: #000;
+}
+
+.iui-table-sort[lay-sort="desc"] .iui-table-sort-desc {
+    border-top-color: #000;
+}
+
+.iui-table-cell {
+    height: 28px;
+    line-height: 28px;
+    padding: 0 15px;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.iui-table-cell .iui-form-checkbox[lay-skin="primary"] {
+    top: -1px;
+    vertical-align: middle;
+}
+
+.iui-table-cell .iui-table-link {
+    color: #01AAED;
+}
+
+.laytable-cell-checkbox,
+.laytable-cell-space,
+.laytable-cell-numbers {
+    padding: 0;
+    text-align: center;
+}
+
+.iui-table-body {
+    position: relative;
+    overflow: auto;
+    margin-right: -1px;
+    margin-bottom: -1px;
+}
+
+.iui-table-body .iui-none {
+    line-height: 40px;
+    text-align: center;
+    color: #999;
+}
+
+.iui-table-fixed {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.iui-table-fixed .iui-table-body {
+    overflow: hidden;
+}
+
+.iui-table-fixed-l {
+    box-shadow: 0 -1px 8px rgba(0, 0, 0, .08);
+}
+
+.iui-table-fixed-r {
+    left: auto;
+    right: -1px;
+    border-width: 0;
+    border-left-width: 1px;
+    box-shadow: -1px 0 8px rgba(0, 0, 0, .08);
+}
+
+.iui-table-fixed-r .iui-table-header {
+    position: relative;
+    overflow: visible;
+}
+
+.iui-table-mend {
+    position: absolute;
+    right: -49px;
+    top: 0;
+    height: 100%;
+    width: 50px;
+}
+
+.iui-table-tool {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    line-height: 30px;
+    padding: 10px 15px;
+    border-width: 0;
+    border-bottom-width: 1px;
+}
+
+.iui-table-page {
+    position: relative;
+    width: 100%;
+    padding: 7px 7px 0;
+    border-width: 0;
+    border-top-width: 1px;
+    height: 41px;
+    margin-bottom: -1px;
+    font-size: 12px;
+}
+
+.iui-table-page>div {
+    height: 26px;
+}
+
+.iui-table-page .iui-laypage {
+    margin: 0;
+}
+
+.iui-table-page .iui-laypage a,
+.iui-table-page .iui-laypage span {
+    height: 26px;
+    line-height: 26px;
+    margin-bottom: 10px;
+    border: none;
+    background: none;
+}
+
+.iui-table-page .iui-laypage a,
+.iui-table-page .iui-laypage span.iui-laypage-curr {
+    padding: 0 12px;
+}
+
+.iui-table-page .iui-laypage span {
+    margin-left: 0;
+    padding: 0;
+}
+
+.iui-table-page .iui-laypage .iui-laypage-prev {
+    margin-left: -7px!important;
+}
+
+.iui-table-page .iui-laypage .iui-laypage-curr .iui-laypage-em {
+    left: 0;
+    top: 0;
+    padding: 0;
+}
+
+.iui-table-page .iui-laypage input,
+.iui-table-page .iui-laypage button {
+    height: 26px;
+    line-height: 26px;
+}
+
+.iui-table-page .iui-laypage input {
+    width: 40px;
+}
+
+.iui-table-page .iui-laypage button {
+    padding: 0 10px;
+}
+
+.iui-table-page select {
+    height: 18px;
+}
+
+.iui-table-view select[lay-ignore] {
+    display: inline-block;
+}
+
+.iui-table-patch .iui-table-cell {
+    padding: 0;
+    width: 30px;
+}
+
+.iui-table-edit {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 14px 1px;
+    border-radius: 0;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, .15)
+}
+
+.iui-table-edit:focus {
+    border-color: #5FB878!important;
+}
+
+select.iui-table-edit {
+    padding: 0 0 0 10px;
+    border-color: #C9C9C9;
+}
+
+.iui-table-view .iui-form-switch,
+.iui-table-view .iui-form-checkbox,
+.iui-table-view .iui-form-radio {
+    top: 0;
+    margin: 0;
+    box-sizing: content-box;
+}
+
+.iui-table-view .iui-form-checkbox {
+    top: -1px;
+    height: 26px;
+    line-height: 26px;
+}
+
+body .iui-table-tips .iui-layer-content {
+    background: none;
+    padding: 0;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .1);
+}
+
+.iui-table-tips-main {
+    margin: -44px 0 0 -1px;
+    max-height: 150px;
+    padding: 8px 15px;
+    font-size: 14px;
+    overflow-y: scroll;
+    background-color: #fff;
+    color: #333;
+}
+
+.iui-table-tips-c {
+    position: absolute;
+    right: -3px;
+    top: -12px;
+    width: 18px;
+    height: 18px;
+    padding: 3px;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 100%;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #666;
+}
+
+.iui-table-tips-c:hover {
+    background-color: #999;
+}

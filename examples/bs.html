@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8"></meta>
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"></meta>
+		<!--<link rel="stylesheet" href="http://jqiui.com/dist/lib/iui.min.css">
+		<link rel="stylesheet" href="http://jqiui.com/dist/css/jquery-iui.css" />-->
+		<!--		<link rel="stylesheet" type="text/css" href="../css/iui.css" />
+-->
+		<style>
+			.bs-callout {
+				-moz-border-bottom-colors: none;
+				-moz-border-left-colors: none;
+				-moz-border-right-colors: none;
+				-moz-border-top-colors: none;
+				border-color: #eee;
+				border-image: none;
+				border-radius: 3px;
+				border-style: solid;
+				border-width: 1px 1px 1px 5px;
+				margin: 20px 0;
+				padding: 20px;
+			}
+			
+			.bs-callout h4 {
+				margin-bottom: 5px;
+				margin-top: 0;
+			}
+			
+			.bs-callout p:last-child {
+				margin-bottom: 0;
+			}
+			
+			.bs-callout code {
+				border-radius: 3px;
+			}
+			
+			.bs-callout+.bs-callout {
+				margin-top: -5px;
+			}
+			
+			.bs-callout-danger {
+				border-left-color: #ce4844;
+			}
+			
+			.bs-callout-danger h4 {
+				color: #ce4844;
+			}
+			
+			.bs-callout-warning {
+				border-left-color: #aa6708;
+			}
+			
+			.bs-callout-warning h4 {
+				color: #aa6708;
+			}
+			
+			.bs-callout-info {
+				border-left-color: #1b809e;
+			}
+			
+			.bs-callout-info h4 {
+				color: #1b809e;
+			}
+			
+			code,
+			kbd,
+			pre,
+			samp {
+				font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+			}
+			
+			code {
+				background-color: #f9f2f4;
+				border-radius: 4px;
+				color: #c7254e;
+				font-size: 90%;
+				padding: 2px 4px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="bs-callout bs-callout-danger">
+			<h4>Don't mix with other components</h4>
+			<p>Icon classes cannot be directly combined with other components. They should not be used along with other classes on the same element. Instead, add a nested <code>&lt;span&gt;</code> and apply the icon classes to the <code>&lt;span&gt;</code>.</p>
+		</div>
+		<div class="bs-callout bs-callout-warning" id="callout-dropdown-positioning">
+			<h4>May require additional positioning</h4>
+			<p>Dropdowns are automatically positioned via CSS within the normal flow of the document. This means dropdowns may be cropped by parents with certain <code>overflow</code> properties or appear out of bounds of the viewport. Address these issues on your own as they arise.</p>
+		</div>
+		<div class="bs-callout bs-callout-info" id="callout-navs-tabs-plugin">
+			<h4>Using navs for tab panels requires JavaScript tabs plugin</h4>
+			<p>For tabs with tabbable areas, you must use the
+				<a href="../javascript/#tabs">tabs JavaScript plugin</a>. The markup will also require additional <code>role</code> and ARIA attributes &ndash; see the plugin's
+				<a href="../javascript/#tabs-usage">example markup</a> for further details.</p>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,75 @@
+
+/** 树组件（重写中） **/
+
+.iui-tree {
+    line-height: 26px;
+}
+
+.iui-tree li {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.iui-tree li a,
+.iui-tree li .iui-tree-spread {
+    display: inline-block;
+    vertical-align: top;
+    height: 26px;
+    *display: inline;
+    *zoom: 1;
+    cursor: pointer;
+}
+
+.iui-tree li a {
+    font-size: 0;
+}
+
+.iui-tree li a i {
+    font-size: 16px;
+}
+
+.iui-tree li a cite {
+    padding: 0 6px;
+    font-size: 14px;
+    font-style: normal;
+}
+
+.iui-tree li i {
+    padding-left: 6px;
+    color: #333;
+    -moz-user-select: none;
+}
+
+.iui-tree li .iui-tree-check {
+    font-size: 13px;
+}
+
+.iui-tree li .iui-tree-check:hover {
+    color: #009E94;
+}
+
+.iui-tree li ul {
+    display: none;
+    margin-left: 20px;
+}
+
+.iui-tree li .iui-tree-enter {
+    line-height: 24px;
+    border: 1px dotted #000;
+}
+
+.iui-tree-drag {
+    display: none;
+    position: absolute;
+    left: -666px;
+    top: -666px;
+    background-color: #f2f2f2;
+    padding: 5px 10px;
+    border: 1px dotted #000;
+    white-space: nowrap
+}
+
+.iui-tree-drag i {
+    padding-right: 5px;
+}

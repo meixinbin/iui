@@ -1,0 +1,47 @@
+/* 按钮组 */
+
+.iui-btn-group {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0;
+}
+
+.iui-btn-group .iui-btn {
+    margin-left: 0!important;
+    margin-right: 0!important;
+    border-left: 1px solid rgba(255, 255, 255, .5);
+    border-radius: 0;
+}
+
+.iui-btn-group .iui-btn-primary {
+    border-left: none;
+}
+
+.iui-btn-group .iui-btn-primary:hover {
+    border-color: #C9C9C9;
+    color: #009688;
+}
+
+.iui-btn-group .iui-btn:first-child {
+    border-left: none;
+    border-radius: 2px 0 0 2px;
+}
+
+.iui-btn-group .iui-btn-primary:first-child {
+    border-left: 1px solid #c9c9c9;
+}
+
+.iui-btn-group .iui-btn:last-child {
+    border-radius: 0 2px 2px 0;
+}
+
+.iui-btn-group .iui-btn+.iui-btn {
+    margin-left: 0;
+}
+
+.iui-btn-group+.iui-btn-group {
+    margin-left: 10px;
+}
+.iui-btn-fluid {
+    width: 100%
+}

@@ -1,0 +1,249 @@
+<div>
+<div class="iui-card layadmin-header">
+  <div class="iui-breadcrumb" lay-filter="breadcrumb" style="visibility: visible;">
+    <a lay-href="">主页</a><span lay-separator="">/</span>
+    <a><cite>组件</cite></a><span lay-separator="">/</span>
+    <a><cite>表单</cite></a><span lay-separator="">/</span>
+    <a><cite>表单组合</cite></a>
+  </div>
+</div>
+
+<style>
+/* 这段样式只是用于演示 */
+
+</style>
+
+<div class="iui-fluid">
+  <div class="iui-card">
+    <div class="iui-card-header">表单组合</div>
+    <div class="iui-card-body" style="padding: 15px;">
+      <form class="iui-form" action="" lay-filter="component-form-group">
+        <div class="iui-form-item">
+          <label class="iui-form-label">单行输入框</label>
+          <div class="iui-input-block">
+            <input name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="iui-input" type="text">
+          </div>
+        </div>
+        <div class="iui-form-item">
+          <label class="iui-form-label">验证必填项</label>
+          <div class="iui-input-block">
+            <input name="username" lay-verify="required" placeholder="请输入" autocomplete="off" class="iui-input" type="text">
+          </div>
+        </div>
+        
+        <div class="iui-form-item">
+          <div class="iui-inline">
+            <label class="iui-form-label">验证手机</label>
+            <div class="iui-input-inline">
+              <input name="phone" lay-verify="required|phone" autocomplete="off" class="iui-input" type="tel">
+            </div>
+          </div>
+          <div class="iui-inline">
+            <label class="iui-form-label">验证邮箱</label>
+            <div class="iui-input-inline">
+              <input name="email" lay-verify="email" autocomplete="off" class="iui-input" type="text">
+            </div>
+          </div>
+        </div>
+        
+        <div class="iui-form-item">
+          <div class="iui-inline">
+            <label class="iui-form-label">多规则验证</label>
+            <div class="iui-input-inline">
+              <input name="number" lay-verify="required|number" autocomplete="off" class="iui-input" type="text">
+            </div>
+          </div>
+          <div class="iui-inline">
+            <label class="iui-form-label">验证日期</label>
+            <div class="iui-input-inline">
+              <input name="date" id="date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="iui-input" lay-key="1" type="text">
+            </div>
+          </div>
+          <div class="iui-inline">
+            <label class="iui-form-label">验证链接</label>
+            <div class="iui-input-inline">
+              <input name="url" lay-verify="url" autocomplete="off" class="iui-input" type="tel">
+            </div>
+          </div>
+        </div>
+        
+        <div class="iui-form-item">
+          <label class="iui-form-label">验证身份证</label>
+          <div class="iui-input-block">
+            <input name="identity" lay-verify="identity" placeholder="" autocomplete="off" class="iui-input" type="text">
+          </div>
+        </div>
+        <div class="iui-form-item">
+          <label class="iui-form-label">自定义验证</label>
+          <div class="iui-input-inline">
+            <input name="password" lay-verify="pass" placeholder="请输入密码" autocomplete="off" class="iui-input" type="password">
+          </div>
+          <div class="iui-form-mid iui-word-aux">请填写6到12位密码</div>
+        </div>
+        
+        <div class="iui-form-item">
+          <div class="iui-inline">
+            <label class="iui-form-label">范围</label>
+            <div class="iui-input-inline" style="width: 100px;">
+              <input name="price_min" placeholder="￥" autocomplete="off" class="iui-input" type="text">
+            </div>
+            <div class="iui-form-mid">-</div>
+            <div class="iui-input-inline" style="width: 100px;">
+              <input name="price_max" placeholder="￥" autocomplete="off" class="iui-input" type="text">
+            </div>
+          </div>
+        </div>
+        
+        <div class="iui-form-item">
+          <label class="iui-form-label">单行选择框</label>
+          <div class="iui-input-block">
+            <select name="interest" lay-filter="aihao">
+              <option value=""></option>
+              <option value="0">写作</option>
+              <option value="1" selected="">阅读</option>
+              <option value="2">游戏</option>
+              <option value="3">音乐</option>
+              <option value="4">旅行</option>
+            </select><div class="iui-unselect iui-form-select"><div class="iui-select-title"><input placeholder="请选择" value="阅读" readonly="" class="iui-input iui-unselect" type="text"><i class="iui-edge"></i></div><dl class="iui-anim iui-anim-upbit"><dd lay-value="" class="iui-select-tips">请选择</dd><dd lay-value="0" class="">写作</dd><dd lay-value="1" class="iui-this">阅读</dd><dd lay-value="2" class="">游戏</dd><dd lay-value="3" class="">音乐</dd><dd lay-value="4" class="">旅行</dd></dl></div>
+          </div>
+        </div>
+        
+        
+        <div class="iui-form-item">
+          <div class="iui-inline">
+            <label class="iui-form-label">分组选择框</label>
+            <div class="iui-input-inline">
+              <select name="quiz">
+                <option value="">请选择问题</option>
+                <optgroup label="城市记忆">
+                  <option value="你工作的第一个城市">你工作的第一个城市</option>
+                </optgroup>
+                <optgroup label="学生时代">
+                  <option value="你的工号">你的工号</option>
+                  <option value="你最喜欢的老师">你最喜欢的老师</option>
+                </optgroup>
+              </select><div class="iui-unselect iui-form-select"><div class="iui-select-title"><input placeholder="请选择问题" value="" readonly="" class="iui-input iui-unselect" type="text"><i class="iui-edge"></i></div><dl class="iui-anim iui-anim-upbit iui-select-group"><dd lay-value="" class="iui-select-tips">请选择问题</dd><dt>城市记忆</dt><dd lay-value="你工作的第一个城市" class="">你工作的第一个城市</dd><dt>学生时代</dt><dd lay-value="你的工号" class="">你的工号</dd><dd lay-value="你最喜欢的老师" class="">你最喜欢的老师</dd></dl></div>
+            </div>
+          </div>
+          <div class="iui-inline">
+            <label class="iui-form-label">搜索选择框</label>
+            <div class="iui-input-inline">
+              <select name="modules" lay-verify="required" lay-search="">
+                <option value="">直接选择或搜索选择</option>
+                <option value="1">layer</option>
+                <option value="2">form</option>
+                <option value="3">layim</option>
+                <option value="4">element</option>
+                <option value="5">laytpl</option>
+                <option value="6">upload</option>
+                <option value="7">laydate</option>
+                <option value="8">laypage</option>
+                <option value="9">flow</option>
+                <option value="10">util</option>
+                <option value="11">code</option>
+                <option value="12">tree</option>
+                <option value="13">layedit</option>
+                <option value="14">nav</option>
+                <option value="15">tab</option>
+                <option value="16">table</option>
+                <option value="17">select</option>
+                <option value="18">checkbox</option>
+                <option value="19">switch</option>
+                <option value="20">radio</option>
+              </select><div class="iui-form-select"><div class="iui-select-title"><input placeholder="直接选择或搜索选择" value="" class="iui-input" type="text"><i class="iui-edge"></i></div><dl class="iui-anim iui-anim-upbit"><dd lay-value="" class="iui-select-tips">直接选择或搜索选择</dd><dd lay-value="1" class="">layer</dd><dd lay-value="2" class="">form</dd><dd lay-value="3" class="">layim</dd><dd lay-value="4" class="">element</dd><dd lay-value="5" class="">laytpl</dd><dd lay-value="6" class="">upload</dd><dd lay-value="7" class="">laydate</dd><dd lay-value="8" class="">laypage</dd><dd lay-value="9" class="">flow</dd><dd lay-value="10" class="">util</dd><dd lay-value="11" class="">code</dd><dd lay-value="12" class="">tree</dd><dd lay-value="13" class="">layedit</dd><dd lay-value="14" class="">nav</dd><dd lay-value="15" class="">tab</dd><dd lay-value="16" class="">table</dd><dd lay-value="17" class="">select</dd><dd lay-value="18" class="">checkbox</dd><dd lay-value="19" class="">switch</dd><dd lay-value="20" class="">radio</dd></dl></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="iui-form-item">
+          <label class="iui-form-label">联动选择框</label>
+          <div class="iui-input-block">
+            <div class="iui-inline">
+              <select name="quiz1">
+                <option value="">请选择省</option>
+                <option value="浙江" selected="">浙江省</option>
+                <option value="你的工号">江西省</option>
+                <option value="你最喜欢的老师">福建省</option>
+              </select><div class="iui-unselect iui-form-select"><div class="iui-select-title"><input placeholder="请选择省" value="浙江省" readonly="" class="iui-input iui-unselect" type="text"><i class="iui-edge"></i></div><dl class="iui-anim iui-anim-upbit"><dd lay-value="" class="iui-select-tips">请选择省</dd><dd lay-value="浙江" class="iui-this">浙江省</dd><dd lay-value="你的工号" class="">江西省</dd><dd lay-value="你最喜欢的老师" class="">福建省</dd></dl></div>
+            </div>
+            <div class="iui-inline">
+              <select name="quiz2">
+                <option value="">请选择市</option>
+                <option value="杭州">杭州</option>
+                <option value="宁波" disabled="">宁波</option>
+                <option value="温州">温州</option>
+                <option value="温州">台州</option>
+                <option value="温州">绍兴</option>
+              </select><div class="iui-unselect iui-form-select"><div class="iui-select-title"><input placeholder="请选择市" value="" readonly="" class="iui-input iui-unselect" type="text"><i class="iui-edge"></i></div><dl class="iui-anim iui-anim-upbit"><dd lay-value="" class="iui-select-tips">请选择市</dd><dd lay-value="杭州" class="">杭州</dd><dd lay-value="宁波" class=" iui-disabled">宁波</dd><dd lay-value="温州" class="">温州</dd><dd lay-value="温州" class="">台州</dd><dd lay-value="温州" class="">绍兴</dd></dl></div>
+            </div>
+            <div class="iui-inline">
+              <select name="quiz3">
+                <option value="">请选择县/区</option>
+                <option value="西湖区">西湖区</option>
+                <option value="余杭区">余杭区</option>
+                <option value="拱墅区">临安市</option>
+              </select><div class="iui-unselect iui-form-select"><div class="iui-select-title"><input placeholder="请选择县/区" value="" readonly="" class="iui-input iui-unselect" type="text"><i class="iui-edge"></i></div><dl class="iui-anim iui-anim-upbit"><dd lay-value="" class="iui-select-tips">请选择县/区</dd><dd lay-value="西湖区" class="">西湖区</dd><dd lay-value="余杭区" class="">余杭区</dd><dd lay-value="拱墅区" class="">临安市</dd></dl></div>
+            </div>
+            <div class="iui-inline">
+              <div class="iui-form-mid iui-word-aux">此处只是演示联动排版，并未做联动交互</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="iui-form-item">
+          <label class="iui-form-label">复选框</label>
+          <div class="iui-input-block">
+            <input name="like[write]" title="写作" type="checkbox"><div class="iui-unselect iui-form-checkbox" lay-skin=""><span>写作</span><i class="iui-icon"></i></div>
+            <input name="like[read]" title="阅读" checked="" type="checkbox"><div class="iui-unselect iui-form-checkbox iui-form-checked" lay-skin=""><span>阅读</span><i class="iui-icon"></i></div>
+            <input name="like[game]" title="游戏" type="checkbox"><div class="iui-unselect iui-form-checkbox" lay-skin=""><span>游戏</span><i class="iui-icon"></i></div>
+          </div>
+        </div>
+        
+        <div class="iui-form-item" pane="">
+          <label class="iui-form-label">原始复选框</label>
+          <div class="iui-input-block">
+            <input name="like1[write]" lay-skin="primary" title="写作" checked="" type="checkbox"><div class="iui-unselect iui-form-checkbox iui-form-checked" lay-skin="primary"><span>写作</span><i class="iui-icon"></i></div>
+            <input name="like1[read]" lay-skin="primary" title="阅读" type="checkbox"><div class="iui-unselect iui-form-checkbox" lay-skin="primary"><span>阅读</span><i class="iui-icon"></i></div>
+            <input name="like1[game]" lay-skin="primary" title="游戏" disabled="" type="checkbox"><div class="iui-unselect iui-form-checkbox iui-checkbox-disbaled iui-disabled" lay-skin="primary"><span>游戏</span><i class="iui-icon"></i></div>
+          </div>
+        </div>
+        
+        <div class="iui-form-item">
+          <label class="iui-form-label">开关-默认关</label>
+          <div class="iui-input-block">
+            <input name="close" lay-skin="switch" lay-text="ON|OFF" type="checkbox"><div class="iui-unselect iui-form-switch" lay-skin="_switch"><em>OFF</em><i></i></div>
+          </div>
+        </div>
+        <div class="iui-form-item">
+          <label class="iui-form-label">开关-默认开</label>
+          <div class="iui-input-block">
+            <input checked="" name="open" lay-skin="switch" lay-filter="component-form-switchTest" lay-text="ON|OFF" type="checkbox"><div class="iui-unselect iui-form-switch iui-form-onswitch" lay-skin="_switch"><em>ON</em><i></i></div>
+          </div>
+        </div>
+        <div class="iui-form-item">
+          <label class="iui-form-label">单选框</label>
+          <div class="iui-input-block">
+            <input name="sex" value="男" title="男" checked="" type="radio"><div class="iui-unselect iui-form-radio iui-form-radioed"><i class="iui-anim iui-icon"></i><div>男</div></div>
+            <input name="sex" value="女" title="女" type="radio"><div class="iui-unselect iui-form-radio"><i class="iui-anim iui-icon"></i><div>女</div></div>
+            <input name="sex" value="禁" title="禁用" disabled="" type="radio"><div class="iui-unselect iui-form-radio iui-radio-disbaled iui-disabled"><i class="iui-anim iui-icon"></i><div>禁用</div></div>
+          </div>
+        </div>
+        <div class="iui-form-item iui-form-text">
+          <label class="iui-form-label">普通文本域</label>
+          <div class="iui-input-block">
+            <textarea name="text" placeholder="请输入内容" class="iui-textarea"></textarea>
+          </div>
+        </div>        
+        <div class="iui-form-item">
+          <div class="iui-input-block">
+            <div class="iui-footer">
+              <button class="iui-btn" lay-submit="" lay-filter="component-form-demo1">立即提交</button>
+              <button type="reset" class="iui-btn iui-btn-primary">重置</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>

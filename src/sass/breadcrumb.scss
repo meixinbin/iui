@@ -1,0 +1,29 @@
+
+/** 面包屑 **/
+
+.iui-breadcrumb {
+    visibility: hidden;
+    font-size: 0;
+}
+
+.iui-breadcrumb>* {
+    font-size: 14px;
+}
+
+.iui-breadcrumb a {
+    color: #999 !important;
+}
+
+.iui-breadcrumb a:hover {
+    color: #5FB878 !important;
+}
+
+.iui-breadcrumb a cite {
+    color: #666;
+    font-style: normal;
+}
+
+.iui-breadcrumb span[lay-separator] {
+    margin: 0 10px;
+    color: #999;
+}

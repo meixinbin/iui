@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/iui.min.css" />
+		<script type="text/javascript">
+			var GV = {
+				ASSETS_ROOT: "//localhost:8082",
+				VERSION:"1.0"
+			};
+		
+		</script>
+
+		<script type="text/javascript" src="../../../assets/libs/jquery/2.1.4/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="../js/iui.js"></script>
+
+	</head>
+
+	<body>
+<header class="iui-bar iui-bar-nav">
+    <a href="index.html" class="iui-action-back iui-icon iui-icon-left-nav iui-pull-left"></a>
+    <h1 class="iui-title">分红通知</h1>
+</header>
+		<div class="iui-content">
+			<div class="iui-slider">
+				<div class="iui-slider-indicator iui-segmented-control iui-segmented-control-inverted">
+					<a class="iui-control-item" href="#item1">分红通知书</a>
+					<a class="iui-control-item" href="#item2">选项卡2</a>
+				</div>
+				<div id="sliderProgressBar" class="iui-slider-progress-bar iui-col-xxs-6"></div>
+				<div class="iui-slider-group">
+					<div id="item1" class="iui-slider-item iui-control-content iui-active">
+						<ul class="iui-table-view">
+							<li class="iui-table-view-cell"><a href="notice.html">第1个选项卡子项</a></li>
+							<li class="iui-table-view-cell"><a href="notice.html">第1个选项卡子项</a></li>
+						</ul>
+					</div>
+					<div id="item2" class="iui-slider-item iui-control-content">
+						<ul class="iui-table-view">
+							<li class="iui-table-view-cell">第2个选项卡子项</li>
+							<li class="iui-table-view-cell">第2个选项卡子项</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<script>
+			//			iui.loading("success")
+		</script>
+
+	</body>
+
+</html>

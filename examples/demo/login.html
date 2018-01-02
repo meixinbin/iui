@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<link rel="stylesheet" type="text/css" href="../css/iui.css" />
+		<script type="text/javascript">
+			var GV = {
+				ASSETS_ROOT: "//localhost:8082",
+				JS_ROOT: '#assetsHost()', //js目录
+				JS_VERSION: '12aa1aswassssdssasasasfsa',
+			};
+			var root = GV.ASSETS_ROOT || location.origin;
+			var alias_js = {
+				jquery: root + '/assets/libs/jquery/2.1.4/jquery-2.1.4.min',
+				jeditor: root + '/assets/jeditor/JEditor',
+				tagsinput: root + '/assets/global/plugins/jquery-tags-input/jquery.tagsinput.min',
+				bootstrap: root + '/assets/global/plugins/bootstrap/js/bootstrap.min',
+				ajaxForm: root + '/js/ui_libs/ajaxForm/ajaxForm',
+				validate: root + '/js/ui_libs/validate/validate',
+				swfupload: root + '/js/util_libs/swfupload/swfupload',
+				dialog: root + '/assets/js/dialog/dialog',
+				draggable: root + '/assets/js/draggable/draggable',
+				common: root + '/assets/common',
+				global: root + '/assets/global',
+			};
+			var alias_css = {
+				colorPicker: root + 'ui_libs/colorPicker/style',
+				datePicker: root + 'ui_libs/datePicker/style',
+				chosen: root + 'ui_libs/chosen/chosen'
+			};
+			var menu_speed = 235,
+				menu_accordion = true;
+		</script>
+
+		<script type="text/javascript" src="../js/iui.core.js"></script>
+		<script type="text/javascript" src="../js/iui.init.js"></script>
+		<script type="text/javascript" src="../js/iui.load.js"></script>
+		<script type="text/javascript" src="../js/iui.namespace.js"></script>
+		<script type="text/javascript" src="../js/iui.os.js"></script>
+		<script type="text/javascript" src="../js/iui.event.js"></script>
+		<script type="text/javascript" src="../js/iui.gestures.js"></script>
+		<script type="text/javascript" src="../js/iui.gestures.tap.js"></script>
+		<script type="text/javascript" src="../js/iui.popup.js"></script>
+		<style>
+
+		</style>
+	</head>
+
+	<body>
+
+		<form>
+			<div class="page__bd">
+				
+					<label class="iui-cell iui-check__label" for="x12">
+
+                <div class="iui-cell__bd">
+                    <p>cell standard</p>
+                </div>
+                <div class="iui-cell__ft">
+                    <input name="radio1" class="iui-check" id="x12" checked="checked" type="radio">
+                    <span class="iui-icon-checked"></span>
+                </div>
+            </label>
+					<a href="javascript:void(0);" class="iui-cell iui-cell_link">
+						<div class="iui-cell__bd">添加更多</div>
+					</a>
+				</div>
+				<div class="iui-cells__title">复选列表项</div>
+				<div class="iui-cells iui-cells_checkbox">
+					<label class="iui-cell iui-check__label" for="s11">
+                <div class="iui-cell__hd">
+                    <input class="iui-check" name="checkbox1" id="s11" checked="checked" type="checkbox">
+                    <i class="iui-icon-checked"></i>
+                </div>
+                <div class="iui-cell__bd">
+                    <p>standard is dealt for u.</p>
+                </div>
+            </label>
+					<label class="iui-cell iui-check__label" for="s12">
+                <div class="iui-cell__hd">
+                    <input name="checkbox1" class="iui-check" id="s12" type="checkbox">
+                    <i class="iui-icon-checked"></i>
+                </div>
+                <div class="iui-cell__bd">
+                    <p>standard is dealicient for u.</p>
+                </div>
+            </label>
+					<a href="javascript:void(0);" class="iui-cell iui-cell_link">
+						<div class="iui-cell__bd">添加更多</div>
+					</a>
+				</div>
+
+				<div class="iui-cells__title">表单</div>
+				<div class="iui-cells">
+					<div class="iui-cell">
+						<div class="iui-cell__hd"><label class="iui-label">qq</label></div>
+						<div class="iui-cell__bd">
+							<input class="iui-input" pattern="[0-9]*" placeholder="请输入qq号" type="number">
+						</div>
+					</div>
+					<div class="iui-cell iui-cell_vcode">
+						<div class="iui-cell__hd">
+							<label class="iui-label">手机号</label>
+						</div>
+						<div class="iui-cell__bd">
+							<input class="iui-input" placeholder="请输入手机号" type="tel">
+						</div>
+						<div class="iui-cell__ft">
+							<button class="iui-vcode-btn">获取验证码</button>
+						</div>
+					</div>
+					<div class="iui-cell">
+						<div class="iui-cell__hd"><label for="" class="iui-label">日期</label></div>
+						<div class="iui-cell__bd">
+							<input class="iui-input" value="" type="date">
+						</div>
+					</div>
+					<div class="iui-cell">
+						<div class="iui-cell__hd"><label for="" class="iui-label">时间</label></div>
+						<div class="iui-cell__bd">
+							<input class="iui-input" value="" placeholder="" type="datetime-local">
+						</div>
+					</div>
+					<div class="iui-cell iui-cell_vcode">
+						<div class="iui-cell__hd"><label class="iui-label">验证码</label></div>
+						<div class="iui-cell__bd">
+							<input class="iui-input" placeholder="请输入验证码" type="number">
+						</div>
+						<div class="iui-cell__ft">
+							<img class="iui-vcode-img" src="./images/vcode.jpg">
+						</div>
+					</div>
+				</div>
+				<div class="iui-cells__tips">底部说明文字底部说明文字</div>
+
+				<div class="iui-cells__title">表单报错</div>
+				<div class="iui-cells iui-cells_form">
+					<div class="iui-cell iui-cell_warn">
+						<div class="iui-cell__hd"><label for="" class="iui-label">卡号</label></div>
+						<div class="iui-cell__bd">
+							<input class="iui-input" pattern="[0-9]*" value="weui input error" placeholder="请输入卡号" type="number">
+						</div>
+						<div class="iui-cell__ft">
+							<i class="iui-icon-warn"></i>
+						</div>
+					</div>
+				</div>
+
+				<div class="iui-cells__title">开关</div>
+				<div class="iui-cells iui-cells_form">
+					<div class="iui-cell iui-cell_switch">
+						<div class="iui-cell__bd">标题文字</div>
+						<div class="iui-cell__ft">
+							<input class="iui-switch" type="checkbox">
+						</div>
+					</div>
+					<div class="iui-cell iui-cell_switch">
+						<div class="iui-cell__bd">兼容IE Edge的版本</div>
+						<div class="iui-cell__ft">
+							<label for="switchCP" class="iui-switch-cp">
+                        <input id="switchCP" class="iui-switch-cp__input" checked="checked" type="checkbox">
+                        <div class="iui-switch-cp__box"></div>
+                    </label>
+						</div>
+					</div>
+				</div>
+
+				<div class="iui-cells__title">文本框</div>
+				<div class="iui-cells">
+					<div class="iui-cell">
+						<div class="iui-cell__bd">
+							<input class="iui-input" placeholder="请输入文本" type="text">
+						</div>
+					</div>
+				</div>
+
+				<div class="iui-cells__title">文本域</div>
+				<div class="iui-cells iui-cells_form">
+					<div class="iui-cell">
+						<div class="iui-cell__bd">
+							<textarea class="iui-textarea" placeholder="请输入文本" rows="3"></textarea>
+							<div class="iui-textarea-counter"><span>0</span>/200</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="iui-cells__title">选择</div>
+				<div class="iui-cells">
+
+					<div class="iui-cell iui-cell_select iui-cell_select-before">
+						<div class="iui-cell__hd">
+							<select class="iui-select" name="select2">
+								<option value="1">+86</option>
+								<option value="2">+80</option>
+								<option value="3">+84</option>
+								<option value="4">+87</option>
+							</select>
+						</div>
+						<div class="iui-cell__bd">
+							<input class="iui-input" pattern="[0-9]*" placeholder="请输入号码" type="number">
+						</div>
+					</div>
+				</div>
+				<div class="iui-cells__title">选择</div>
+				<div class="iui-cells">
+					<div class="iui-cell iui-cell_select">
+						<div class="iui-cell__bd">
+							<select class="iui-select" name="select1">
+								<option selected="" value="1">微信号</option>
+								<option value="2">QQ号</option>
+								<option value="3">Email</option>
+							</select>
+						</div>
+					</div>
+					<div class="iui-cell iui-cell_select iui-cell_select-after">
+						<div class="iui-cell__hd">
+							<label for="" class="iui-label">国家/地区</label>
+						</div>
+						<div class="iui-cell__bd">
+							<select class="iui-select" name="select2">
+								<option value="1">中国</option>
+								<option value="2">美国</option>
+								<option value="3">英国</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<div class="iui-btn-area">
+					<a class="iui-btn iui-btn-block iui-btn-primary" href="javascript:" id="showTooltips">确定</a>
+				</div>
+			</div>
+		</form>
+		<script>
+			iui.use("jquery", "http://127.0.0.1:8020/static-resources/WebRoot/iui/js/iui.dialog.toast.js", function() {
+				//iui.loading("success")
+			});
+			//			iui.alert("<i class='iui-icon iui-icon-checkmarkempty'></i>")
+		</script>
+
+	</body>
+
+</html>

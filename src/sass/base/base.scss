@@ -1,0 +1,387 @@
+//
+// Base styles
+// --------------------------------------------------
+/** 初始化 **/
+// Use box sizing on all the things!
+//* {
+//  -webkit-box-sizing: border-box;
+//  box-sizing: border-box;
+//  -webkit-tap-highlight-color: rgba(0,0,0,0);
+//  -webkit-tap-highlight-color: transparent;
+////  -webkit-user-select: none;//禁止选择文字
+//  outline: none;
+//  margin:0;
+//  padding: 0;
+//}
+.iui-inline,img {
+    display: inline-block;
+    vertical-align: middle
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 400
+}
+.iui-edge,.iui-header,.iui-inline,.iui-main {
+    position: relative
+}
+.iui-btn,.iui-edge,.iui-inline,img {
+    vertical-align: middle
+}
+.iui-btn,.iui-disabled,.iui-icon,.iui-unselect {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none
+}
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,button,textarea,p,blockquote,th,td,form,pre {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+// Universal link styling
+a {
+    color: #333;
+    text-decoration: none;
+    &:active {
+        color: darken($primary-color, 10%);
+    }
+}
+a:active,a:hover {
+    outline: 0;
+    color: #777;
+}
+hr {
+    height: 1px;
+    margin: 10px 0;
+    border: 0;
+    clear: both;
+}
+img {
+    display: inline-block;
+    border: none;
+    vertical-align: middle;
+}
+li {
+    list-style: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+h1,h2,h3 {
+    font-weight: 400;
+}
+
+h4,h5,h6 {
+    font-size: 100%;
+    font-weight: 400;
+}
+
+button,input,select,textarea {
+    font-size: 100%;
+}
+
+input,button,textarea,select,optgroup,option {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    outline: 0;
+}
+
+pre {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+// We fix position the body and scroll `.#{$namespace}content`.
+body {
+    font: 14px Helvetica Neue, Helvetica, PingFang SC, \5FAE\8F6F\96C5\9ED1, Tahoma, Arial, sans-serif;
+    color: #000;
+    -webkit-overflow-scrolling: touch;
+}
+
+hr {
+    height: 1px;
+    margin: 10px 0;
+    border: 0;
+    clear: both
+}
+
+a {
+    color: #333;
+    text-decoration: none
+}
+
+a:hover {
+    color: #777
+}
+
+a cite {
+    font-style: normal;
+    *cursor: pointer
+}
+
+/** 基础通用 **/
+
+.#{$namespace}border-box,
+.#{$namespace}border-box * {
+    box-sizing: border-box;
+}
+/* 消除第三方ui可能造成的冲突 */
+
+.#{$namespace}box,.iui-box * {
+    box-sizing: content-box;
+}
+
+.#{$namespace}clear {
+    clear: both;
+    *zoom: 1;
+}
+.#{$namespace}clear:after {
+    content: '\20';
+    clear: both;
+    *zoom: 1;
+    display: block;
+    height: 0;
+}
+.#{$namespace}inline {
+    position: relative;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+}
+
+/* 三角形 */
+.#{$namespace}edge {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 0;
+    border-width: 6px;
+    border-style: dashed;
+    border-color: transparent;
+    overflow: hidden;
+}
+.#{$namespace}edge-top {
+    top: -4px;
+    border-bottom-color: #999;
+    border-bottom-style: solid;
+}
+
+.#{$namespace}edge-right {
+    border-left-color: #999;
+    border-left-style: solid;
+}
+
+.#{$namespace}edge-bottom {
+    top: 2px;
+    border-top-color: #999;
+    border-top-style: solid;
+}
+
+.#{$namespace}edge-left {
+    border-right-color: #999;
+    border-right-style: solid;
+}
+/* 单行溢出省略 */
+
+.#{$namespace}elip {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+/* 屏蔽选中 */
+.#{$namespace}unselect,
+.#{$namespace}icon,
+.#{$namespace}disabled {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+/* 禁用 */
+.#{$namespace}disabled,
+.#{$namespace}disabled:hover {
+    color: #d2d2d2 !important;
+    cursor: not-allowed !important;
+}
+/* 纯圆角 */
+
+.#{$namespace}circle {
+    border-radius: 100%;
+}
+
+.#{$namespace}show {
+    display: block !important;
+}
+
+.#{$namespace}hide {
+    display: none !important;
+}
+
+// Wrapper to be used around all content not in .#{$namespace}bar-title and .#{$namespace}bar-tab
+.#{$namespace}content {
+    background-color: #efeff4;
+    -webkit-overflow-scrolling: touch;
+}
+
+// Hack to force all relatively and absolutely positioned elements still render while scrolling
+// Note: This is a bug for "-webkit-overflow-scrolling: touch"
+// .#{$namespace}content > * {
+//     @include transform(translateZ(0));
+// }
+
+// Pad top/bottom of content so it doesn't hide behind bars.
+// Note: For these to work, content must come after both bars in the markup
+.#{$namespace}bar-nav ~ .#{$namespace}content {
+    padding-top: $bar-base-height;
+    &.#{$namespace}scroll-wrapper{
+     .#{$namespace}scrollbar-vertical{
+         top:$bar-base-height;
+     }
+    }
+}
+.#{$namespace}bar-header-secondary ~ .#{$namespace}content {
+    padding-top: ($bar-base-height*2);
+     &.#{$namespace}scroll-wrapper{
+     .#{$namespace}scrollbar-vertical{
+         top:($bar-base-height*2);
+     }
+    }
+}
+
+// Footer bar padding
+.#{$namespace}bar-footer ~ .#{$namespace}content {
+    padding-bottom: $bar-base-height;
+     &.#{$namespace}scroll-wrapper{
+     .#{$namespace}scrollbar-vertical{
+         bottom:$bar-base-height;
+     }
+    }
+}
+.#{$namespace}bar-footer-secondary ~ .#{$namespace}content {
+    padding-bottom: ($bar-base-height*2);
+     &.#{$namespace}scroll-wrapper{
+     .#{$namespace}scrollbar-vertical{
+         bottom:($bar-base-height*2);
+     }
+    }
+}
+
+// Tab bar padding
+.#{$namespace}bar-tab ~ .#{$namespace}content {
+    padding-bottom: $bar-tab-height;
+     &.#{$namespace}scroll-wrapper{
+     .#{$namespace}scrollbar-vertical{
+         bottom:$bar-tab-height;
+     }
+    }
+}
+.#{$namespace}bar-footer-secondary-tab ~ .#{$namespace}content {
+    padding-bottom: ($bar-tab-height+$bar-base-height);
+     &.#{$namespace}scroll-wrapper{
+     .#{$namespace}scrollbar-vertical{
+         bottom:($bar-tab-height+$bar-base-height);
+     }
+    }
+}
+
+// Utility classes
+
+.#{$namespace}content-padded {
+    //暂时放弃content-padded
+       margin: $bar-side-spacing;
+}
+.#{$namespace}inline {
+    display: inline-block;
+    vertical-align: top;
+}
+.#{$namespace}block {
+    display: block!important;
+}
+.#{$namespace}visibility {
+    visibility: visible!important;
+}
+.#{$namespace}hidden {
+    display: none!important;
+}
+.#{$namespace}ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.#{$namespace}ellipsis-2{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal!important;
+    word-wrap: break-word;
+}
+.#{$namespace}table{
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+.#{$namespace}table-cell{
+    display: table-cell;
+    position: relative;
+}
+.#{$namespace}text-left{
+    text-align: left!important;
+}
+.#{$namespace}text-center{
+    text-align: center!important;
+}
+.#{$namespace}text-justify{
+    text-align: justify!important;
+}
+.#{$namespace}text-right{
+    text-align: right!important;
+}
+.#{$namespace}pull-left {
+    float: left;
+}
+.#{$namespace}pull-right {
+    float: right;
+}
+
+.#{$namespace}list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+.#{$namespace}list-inline {
+    padding-left: 0;
+    list-style: none;
+    margin-left: -5px;
+}
+.#{$namespace}list-inline > li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.#{$namespace}clearfix {
+    @include clearfix();
+}
+.#{$namespace}bg-primary {
+    background-color:$primary-color;
+}
+.#{$namespace}bg-positive{
+    background-color:$positive-color;
+}
+.#{$namespace}bg-negative{
+    background-color:$negative-color;
+}
+.#{$namespace}error{
+    margin: 88px 35px;
+    padding:10px;
+    border-radius:6px;
+    background-color:#bbb;
+}
+.#{$namespace}subtitle{
+    font-size: 15px;
+}

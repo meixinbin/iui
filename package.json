@@ -1,0 +1,44 @@
+{
+  "name": "iui",
+  "description": "最接近原生体验的高性能前端框架.",
+  "version": "1.0.0",
+  "keywords": [
+    "css",
+    "fonts",
+    "ios",
+    "android",
+    "mobile",
+    "prototype"
+  ],
+  "style": "css/iui.css",
+  "sass": "sass/iui.scss",
+  "license": "MIT",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "body-parser": "^1.17.2",
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-csslint": "^2.0.0",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-handlebars": "^1.0.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^3.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-csscomb": "^3.1.1",
+    "grunt-html-validation": "^0.1.18",
+    "grunt-jekyll": "^0.4.6",
+    "grunt-jscs": "^3.0.1",
+    "grunt-jsdoc": "^2.1.0",
+    "grunt-open": "^0.2.3",
+    "grunt-sed": "^0.1.1",
+    "gulp": "^3.9.1",
+    "load-grunt-tasks": "^3.5.2",
+    "time-grunt": "^1.4.0"
+  }
+}

@@ -1,0 +1,242 @@
+/** 导航菜单 **/
+
+.iui-nav {
+    position: relative;
+    padding: 0 20px;
+    background-color: #393D49;
+    color: #fff;
+    border-radius: 2px;
+    font-size: 0;
+    box-sizing: border-box;
+}
+
+.iui-nav * {
+    font-size: 14px;
+}
+
+.iui-nav .iui-nav-item {
+    position: relative;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+    line-height: 60px;
+}
+
+.iui-nav .iui-nav-item a {
+    display: block;
+    padding: 0 20px;
+    color: #fff;
+    color: rgba(255, 255, 255, .7);
+    transition: all .3s;
+    -webkit-transition: all .3s;
+}
+
+.iui-nav-bar,
+.iui-nav .iui-this:after,
+.iui-nav-tree .iui-nav-itemed:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 5px;
+    background-color: #5FB878;
+    transition: all .2s;
+    -webkit-transition: all .2s;
+}
+
+.iui-nav-bar {
+    z-index: 1000;
+}
+
+.iui-nav .iui-this a,
+.iui-nav .iui-nav-item a:hover {
+    color: #fff;
+}
+
+.iui-nav .iui-this:after {
+    content: '';
+    top: auto;
+    bottom: 0;
+    width: 100%;
+}
+
+.iui-nav-img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.iui-nav .iui-nav-more {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid dashed dashed;
+    border-color: #fff transparent transparent;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    position: absolute;
+    top: 50%;
+    right: 3px;
+    margin-top: -3px;
+    border-width: 6px;
+    border-top-color: rgba(255, 255, 255, .7)
+}
+
+.iui-nav .iui-nav-mored,.iui-nav-itemed .iui-nav-more {
+    margin-top: -9px;
+    border-style: dashed;
+    border-color: transparent;
+    border-bottom-style: solid;
+    border-bottom-color: #fff;
+}
+
+.iui-nav-child {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 65px;
+    min-width: 100%;
+    line-height: 36px;
+    padding: 5px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+    border: 1px solid #d2d2d2;
+    background-color: #fff;
+    z-index: 100;
+    border-radius: 2px;
+    white-space: nowrap;
+}
+
+.iui-nav .iui-nav-child a {
+    color: #333;
+}
+
+.iui-nav .iui-nav-child a:hover {
+    background-color: #f2f2f2;
+    color: #000;
+}
+
+.iui-nav-child dd {
+    position: relative;
+}
+
+.iui-nav-child dd.iui-this {
+    background-color: #5FB878;
+    color: #fff;
+}
+
+.iui-nav .iui-nav-child dd.iui-this a {
+    background-color: #5FB878;
+    color: #fff;
+}
+
+.iui-nav-child dd.iui-this:after {
+    display: none;
+}
+
+
+/* 垂直导航菜单 */
+
+.iui-nav-tree {
+    width: 200px;
+    padding: 0;
+}
+
+.iui-nav-tree .iui-nav-item {
+    display: block;
+    width: 100%;
+    line-height: 45px;
+}
+
+.iui-nav-tree .iui-nav-item a {
+    height: 45px;
+    line-height: 45px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.iui-nav-tree .iui-nav-item a:hover {
+    background-color: #4E5465;
+}
+
+.iui-nav-tree .iui-nav-bar {
+    width: 5px;
+    height: 0;
+}
+
+.iui-nav-tree .iui-this,
+.iui-nav-tree .iui-this>a,
+.iui-nav-tree .iui-this>a:hover,
+.iui-nav-tree .iui-nav-child dd.iui-this,
+.iui-nav-tree .iui-nav-child dd.iui-this a {
+    background-color: #009688;
+    color: #fff;
+}
+
+.iui-nav-tree .iui-this:after {
+    display: none;
+}
+
+.iui-nav-tree .iui-nav-title a,
+.iui-nav-tree .iui-nav-title a:hover,
+.iui-nav-itemed>a {
+    color: #fff !important;
+}
+
+.iui-nav-tree .iui-nav-bar {
+    background-color: #009688;
+}
+
+.iui-nav-tree .iui-nav-child {
+    position: relative;
+    z-index: 0;
+    top: 0;
+    border: none;
+    box-shadow: none;
+}
+
+.iui-nav-tree .iui-nav-child a {
+    height: 40px;
+    line-height: 40px;
+}
+
+.iui-nav-tree .iui-nav-child a {
+    color: #fff;
+    color: rgba(255, 255, 255, .7);
+}
+
+.iui-nav-tree .iui-nav-child a:hover,
+.iui-nav-tree .iui-nav-child {
+    background: none;
+    color: #fff;
+}
+
+.iui-nav-tree .iui-nav-more {
+    top: 20px;
+    right: 10px;
+    margin: 0;
+}
+
+.iui-nav-itemed .iui-nav-more {
+    top: 14px;
+}
+
+.iui-nav-itemed .iui-nav-child {
+    display: block;
+    padding: 0;
+    background-color: rgba(0, 0, 0, .3) !important;
+}
+
+/* 侧边 */
+
+.iui-nav-side {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow-x: hidden;
+    z-index: 999;
+}
