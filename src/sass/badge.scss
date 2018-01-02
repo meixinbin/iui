@@ -1,8 +1,6 @@
 /* 小徽章 */
 
-.iui-badge,
-.iui-badge-dot,
-.iui-badge-rim {
+.iui-badge, .iui-badge-dot, .iui-badge-rim {
     position: relative;
     display: inline-block;
     padding: 0 6px;
@@ -12,19 +10,16 @@
     color: #fff;
     border-radius: 2px;
 }
-
 .iui-badge {
     height: 18px;
     line-height: 18px;
 }
-
 .iui-badge-dot {
     width: 8px;
     height: 8px;
     padding: 0;
     border-radius: 50%;
 }
-
 .iui-badge-rim {
     height: 18px;
     line-height: 18px;
@@ -33,21 +28,15 @@
     background-color: #fff;
     color: #666;
 }
-
-.iui-btn .iui-badge,
-.iui-btn .iui-badge-dot {
+.iui-btn .iui-badge, .iui-btn .iui-badge-dot {
     margin-left: 5px;
 }
-
-.iui-nav .iui-badge,
-.iui-nav .iui-badge-dot {
+.iui-nav .iui-badge, .iui-nav .iui-badge-dot {
     position: absolute;
     top: 50%;
     margin: -8px 6px 0;
 }
-
-.iui-tab-title .iui-badge,
-.iui-tab-title .iui-badge-dot {
+.iui-tab-title .iui-badge, .iui-tab-title .iui-badge-dot {
     left: 5px;
     top: -2px;
 }

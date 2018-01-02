@@ -1,49 +1,46 @@
 /* 文本区域 */
 
 .iui-text {
-    line-height: 22px;
-    font-size: 14px;
-    color: #666;
+  line-height: 22px;
+  font-size: 14px;
+  color: #666;
 }
 
-.iui-text h1,
-.iui-text h2,
-.iui-text h3 {
-    font-weight: 500;
-    color: #333;
+.iui-text h1, .iui-text h2, .iui-text h3 {
+  font-weight: 500;
+  color: #333;
 }
 
 .iui-text h1 {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .iui-text h2 {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .iui-text h3 {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .iui-text a:not(.iui-btn) {
-    color: #01AAED;
+  color: #01AAED;
 }
 
 .iui-text a:not(.iui-btn):hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .iui-text ul {
-    padding: 5px 0 5px 15px;
+  padding: 5px 0 5px 15px;
 }
 
 .iui-text ul li {
-    margin-top: 5px;
-    list-style-type: disc;
+  margin-top: 5px;
+  list-style-type: disc;
 }
 
-.iui-text em,
-.iui-word-aux {
-    color: #999 !important;
-    padding: 0 5px !important;
+.iui-text em, .iui-word-aux {
+  color: #999 !important;
+  padding: 0 5px !important;
 }
