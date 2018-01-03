@@ -6,13 +6,10 @@
     
 */
 
-layui.define('jquery', function(exports){
+(function($){
   "use strict";
   
-  var $ = layui.$
-  
-  //外部接口
-  ,util = {
+  var util = {
     //固定块
     fixbar: function(options){
       var ELEM = 'layui-fixbar', TOP_BAR = 'layui-fixbar-top'
@@ -139,7 +136,22 @@ layui.define('jquery', function(exports){
       }
       return num < Math.pow(10, length) ? str + (num|0) : num;
     }
-    
+    //遍历
+    ,each:function(obj, fn){
+        var key,that = this;
+        if(typeof fn !== 'function') return that;
+        obj = obj || [];
+        if(obj.constructor === Object){
+            for(key in obj){
+                if(fn.call(obj[key], key, obj[key])) break;
+            }
+        } else {
+            for(key = 0; key < obj.length; key++){
+                if(fn.call(obj[key], key, obj[key])) break;
+            }
+        }
+        return that;
+    }
     //转化为日期格式字符
     ,toDateString: function(time, format){
       var that = this
@@ -165,6 +177,5 @@ layui.define('jquery', function(exports){
       .replace(/ss/g, hms[2]);
     }
   };
-  
-  exports('util', util);
-});
+  window.util=util;
+})(jQuery);

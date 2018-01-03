@@ -6,7 +6,7 @@
  
  */
 
-layui.define(function(exports){
+(function(){
 
   "use strict";
 
@@ -117,7 +117,5 @@ layui.define(function(exports){
   };
 
   laytpl.v = '1.2.0';
-  
-  exports('laytpl', laytpl);
 
-});
+})();
