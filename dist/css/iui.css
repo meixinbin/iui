@@ -2772,7 +2772,7 @@ hr
     display: none;
 }
 
-.iui-form *[lay-ignore]
+.iui-form *[iui-ignore]
 {
     display: initial;
 }
