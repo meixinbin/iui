@@ -8,9 +8,7 @@
 
 (function($){
     "use strict";
-
     var THIS = 'iui-this', SHOW = 'iui-show'
-
         ,Element = function(){
         this.config = {};
     };
@@ -23,9 +21,9 @@
     };
 
     //表单事件监听
-    Element.prototype.on = function(events, callback){
-        return iui.onevent.call(this, MOD_NAME, events, callback);
-    };
+    // Element.prototype.on = function(events, callback){
+    //     return iui.onevent.call(this, MOD_NAME, events, callback);
+    // };
 
     //外部Tab新增
     Element.prototype.tabAdd = function(filter, options){
@@ -394,7 +392,7 @@
             }
         };
 
-        return items[type] ? items[type]() : util.each(items, function(index, item){
+        return items[type] ? items[type]() : iui.each(items, function(index, item){
                 item();
             });
     };
