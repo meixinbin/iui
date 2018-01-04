@@ -12,7 +12,7 @@
   var doc = document,id = 'getElementById',tag = 'getElementsByTagName'
   
   //字符常量
-  ,MOD_NAME = 'laypage', DISABLED = 'iui-disabled'
+  ,DISABLED = 'iui-disabled'
   
   //构造器
   ,Class = function(options){

@@ -272,12 +272,6 @@
     .siblings().removeClass(THIS);
     
     that.haveSlide = true;
-    
-    iui.event.call(this, MOD_NAME, 'change('+ filter +')', {
-      index: options.index
-      ,prevIndex: thisIndex
-      ,item: elemItem.eq(options.index)
-    });
   };
   
   //事件处理

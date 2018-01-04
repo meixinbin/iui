@@ -820,5 +820,20 @@ Array.prototype.unique= function(){
         str.replace(/[\r\t\n]/g, " ").split("<%").join("\t").replace(/((^|%>)[^\t]*)'/g, "$1\r").replace(/\t=(.*?)%>/g, "',$1,'").split("\t").join("');").split("%>").join("p.push('").split("\r").join("\\'") + "');}return p.join('');");
         return data ? fn(data) : fn;
     };
-    iui.Util = {};
+    iui.each = function(obj, fn){
+        var key,that = this;
+        if(typeof fn !== 'function') return that;
+        obj = obj || [];
+        if(obj.constructor === Object){
+            for(key in obj){
+                if(fn.call(obj[key], key, obj[key])) break;
+            }
+        } else {
+            for(key = 0; key < obj.length; key++){
+                if(fn.call(obj[key], key, obj[key])) break;
+            }
+        }
+        return that;
+    }
+    iui.util = {};
 })(window);

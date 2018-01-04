@@ -6,10 +6,9 @@
     
 */
 
-(function($){
+iui.util = (function($,util){
   "use strict";
-  
-  var util = {
+  var newutil = {
     //固定块
     fixbar: function(options){
       var ELEM = 'layui-fixbar', TOP_BAR = 'layui-fixbar-top'
@@ -177,5 +176,6 @@
       .replace(/ss/g, hms[2]);
     }
   };
-  window.util=util;
-})(jQuery);
+  $.extend(util,newutil);
+  // window.util=util;
+})(jQuery,iui.util||{});

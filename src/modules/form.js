@@ -19,22 +19,6 @@
         $.extend(true, that.config, options);
         return that;
     };
-    //遍历
-    var each = function(obj, fn){
-        var key,that = this;
-        if(typeof fn !== 'function') return that;
-        obj = obj || [];
-        if(obj.constructor === Object){
-            for(key in obj){
-                if(fn.call(obj[key], key, obj[key])) break;
-            }
-        } else {
-            for(key = 0; key < obj.length; key++){
-                if(fn.call(obj[key], key, obj[key])) break;
-            }
-        }
-        return that;
-    };
     //表单控件渲染
     Form.prototype.render = function(type, filter){
         var that = this,elemForm = $(ELEM + function(){
@@ -339,7 +323,7 @@
         };
         type ? (
                 items[type] ? items[type]() : hint.error('不支持的'+ type + '表单渲染')
-            ) : each(items, function(index, item){
+            ) : iui.each(items, function(index, item){
                 item();
             });
 
