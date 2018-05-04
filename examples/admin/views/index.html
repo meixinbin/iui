@@ -10,6 +10,12 @@
 		<link type="text/css" rel="stylesheet" href="../css/modules/layer/default/layer.css" media="all">
 		<link type="text/css" rel="stylesheet" href="../../../dist/admin/css/admin.css" media="all">
 		<link type="text/css" rel="stylesheet" href="../../../dist/css/icons.css" media="all">
+		<link type="text/css" rel="stylesheet" href="../../../dist/libs/tooltip/css/tooltip.css" media="all">
+		<style>
+			.iui-tooltip{
+				padding: 8px 21px;
+			}
+		</style>
 	</head>
 	<body class="iui-layout-body">
 		<div id="iui-app" class="">
@@ -25,7 +31,7 @@
 							<i class="iui-icon iui-icon-shrink-right" id="iui_app_flexible"></i>
 						</a>
 					</li>
-					<li class="iui-nav-item iui-this iui-hide-xs iui-hide-sm iui-show-md-inline-block">
+					<li data-toggle="tooltip" data-placement="right" title="dddd" class="iui-nav-item iui-this iui-hide-xs iui-hide-sm iui-show-md-inline-block">
 						<a lay-href="" title="">
 							控制台
 						</a>
@@ -92,8 +98,8 @@
 				<div class="iui-side iui-side-menu">
 					<div class="iui-side-scroll">
 						<ul id="iui-sidebar" class="side-main">
-							<li data-id="sb00" data-name="component"><a href="welcome.html"> <i class="iui-icon iui-icon-home"></i>首页</a> </li>
-							<li data-id="sb0" data-name="component"> <i class="iui-icon iui-icon-component"></i>组件 </li>
+							<li data-id="sb00" data-name="component"><a data-toggle="tooltip" data-placement="right" title="首页" href="welcome.html" > <i class="iui-icon iui-icon-home"></i>首页</a> </li>
+							<li data-id="sb0" data-name="component" data-toggle="tooltip" data-placement="right" title="dddd"> <i class="iui-icon iui-icon-component"></i>组件 </li>
 							<li data-id="sb1" data-name="template" href="template/tips/404"> <i class="iui-icon iui-icon-template"></i>模板 </li>
 							<li data-id="sb2" data-name="app" href="app/message/"> <i class="iui-icon iui-icon-app"></i>应用 </li>
 							<li data-id="sb3" data-name="senior" href="senior/im/chat"> <i class="iui-icon iui-icon-senior"></i>高级 </li>
@@ -354,7 +360,8 @@
 		</div>
 		<script type="text/javascript" src="//localhost:8082/iui/dist/iui.js?v=1"></script>
 		<script>
-			iui.use("jquery","//localhost:8082/iui/examples/admin/js/iui-admin.js",function(){
+			iui.use("jquery","//localhost:8082/iui/dist/libs/tooltip/js/tooltip.js","//localhost:8082/iui/examples/admin/js/iui-admin.js",function(){
+			$('[data-toggle="tooltip"]').tooltip({container:"body",template:'<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner iui-tooltip"></div></div>'})
 			});
 		</script>
 	</body>

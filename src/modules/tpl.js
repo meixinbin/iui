@@ -6,7 +6,7 @@
  
  */
 
-(function(){
+(function(iui){
 
   "use strict";
 
@@ -118,4 +118,6 @@
 
   laytpl.v = '1.2.0';
 
-})();
+  iui.tpl = laytpl;
+
+})(window.iui||{});

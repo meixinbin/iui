@@ -15,7 +15,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.iui-icon-arrow-right:before {
+	content: "\E623"
+}
+.iui-icon-arrow-down:before {
+	content: "\E625"
+}
 .iui-icon-duihua:before {
  content:"\e611"
 }

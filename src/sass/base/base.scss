@@ -295,10 +295,6 @@ a cite {
     //暂时放弃content-padded
        margin: $bar-side-spacing;
 }
-.#{$namespace}inline {
-    display: inline-block;
-    vertical-align: top;
-}
 .#{$namespace}block {
     display: block!important;
 }

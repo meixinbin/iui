@@ -323,7 +323,7 @@
 
 /* 复选框-原始风格 */
 
-.iui-form-checkbox[skin="primary"] {
+.iui-form-checkbox[iui-skin="primary"] {
     height: auto!important;
     line-height: normal!important;
     border: none!important;
@@ -332,7 +332,7 @@
     background: none;
 }
 
-.iui-form-checkbox[skin="primary"] span {
+.iui-form-checkbox[iui-skin="primary"] span {
     float: right;
     padding-right: 15px;
     line-height: 18px;
@@ -340,7 +340,7 @@
     color: #666;
 }
 
-.iui-form-checkbox[skin="primary"] i {
+.iui-form-checkbox[iui-skin="primary"] i {
     position: relative;
     top: 0;
     width: 16px;
@@ -354,31 +354,29 @@
     transition: .1s linear;
 }
 
-.iui-form-checkbox[skin="primary"]:hover i {
+.iui-form-checkbox[iui-skin="primary"]:hover i {
     border-color: #5FB878;
     color: #fff;
 }
 
-.iui-form-checked[skin="primary"] i {
+.iui-form-checked[iui-skin="primary"] i {
     border-color: #5FB878;
     background-color: #5FB878;
     color: #fff;
 }
 
-.iui-checkbox-disbaled[skin="primary"] span {
+.iui-checkbox-disbaled[iui-skin="primary"] span {
     background: none!important;
     color: #c2c2c2;
 }
 
-.iui-checkbox-disbaled[skin="primary"]:hover i {
+.iui-checkbox-disbaled[iui-skin="primary"]:hover i {
     border-color: #d2d2d2;
 }
 
-.iui-form-item .iui-form-checkbox[skin="primary"] {
+.iui-form-item .iui-form-checkbox[iui-skin="primary"] {
     margin-top: 10px;
 }
-
-
 /* 复选框-开关风格 */
 
 .iui-form-switch {

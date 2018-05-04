@@ -4,65 +4,22 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" type="text/css" href="../css/iui.css" />
-		<script type="text/javascript">
-			var GV = {
-				ASSETS_ROOT: "//localhost:8082",
-				JS_ROOT: '#assetsHost()', //js目录
-				JS_VERSION: '12aa1aswassssdssasasasfsa',
-			};
-			var root = GV.ASSETS_ROOT || location.origin;
-			var alias_js = {
-				jquery: root + '/assets/libs/jquery/2.1.4/jquery-2.1.4.min',
-				jeditor: root + '/assets/jeditor/JEditor',
-				tagsinput: root + '/assets/global/plugins/jquery-tags-input/jquery.tagsinput.min',
-				bootstrap: root + '/assets/global/plugins/bootstrap/js/bootstrap.min',
-				ajaxForm: root + '/js/ui_libs/ajaxForm/ajaxForm',
-				validate: root + '/js/ui_libs/validate/validate',
-				swfupload: root + '/js/util_libs/swfupload/swfupload',
-				dialog: root + '/assets/js/dialog/dialog',
-				draggable: root + '/assets/js/draggable/draggable',
-				common: root + '/assets/common',
-				global: root + '/assets/global',
-			};
-			var alias_css = {
-				colorPicker: root + 'ui_libs/colorPicker/style',
-				datePicker: root + 'ui_libs/datePicker/style',
-				chosen: root + 'ui_libs/chosen/chosen'
-			};
-			var menu_speed = 235,
-				menu_accordion = true;
-		</script>
-
-		<script type="text/javascript" src="../js/iui.core.js"></script>
-		<script type="text/javascript" src="../js/iui.init.js"></script>
-		<script type="text/javascript" src="../js/iui.load.js"></script>
-		<script type="text/javascript" src="../js/iui.namespace.js"></script>
-		<script type="text/javascript" src="../js/iui.os.js"></script>
-		<script type="text/javascript" src="../js/iui.event.js"></script>
-		<script type="text/javascript" src="../js/iui.gestures.js"></script>
-		<script type="text/javascript" src="../js/iui.gestures.tap.js"></script>
-		<script type="text/javascript" src="../js/iui.popup.js"></script>
-		<script type="text/javascript" src="../js/iui.button.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../dist/css/iui.css" />
+		<script type="text/javascript" src="../../dist/iui.js"></script>
 
 	</head>
 
 	<body>
-		<div id="iui-toast">
-			<div class="iui-mask_transparent"></div>
-			<div class="iui-toast " style="z-index:99999"> 
-			<i class="iui-icon-success-no-circle iui-icon-toast"></i>
-				<p class="iui-toast-content">操作成功</p>
-			</div>
-		</div>
-				<button type="button" class="iui-btn" id="btn">默认</button>
 
+		<button type="button" class="iui-btn" id="btn">默认</button>
 		<script>
-			iui(document.body).on('tap', '.iui-btn', function(e) {
-				iui(this).button('loading');
-				setTimeout(function() {
-					iui(this).button('reset');
-				}.bind(this), 2000);
+			iui.use("jquery","toast",function(){
+				$("#btn").on("click",function(){
+					var t = iui.forbidden("forbidden",function(){
+						
+					});
+//					t.close();
+				});
 			});
 		</script>
 	</body>

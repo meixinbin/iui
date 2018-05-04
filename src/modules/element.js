@@ -137,7 +137,7 @@
                         ,STOPE = 'iui-stope="tabmore"'
                         ,span = $('<span class="iui-unselect iui-tab-bar" '+ STOPE +'><i '+ STOPE +' class="iui-icon">&#xe61a;</i></span>');
 
-                    if(that === window && device.ie != 8){
+                    if(that === window){
                         call.hideTabMore(true)
                     }
 
@@ -260,7 +260,7 @@
                                 width: othis.width()
                                 ,opacity: 1
                             });
-                        }, device.ie && device.ie < 10 ? 0 : TIME);
+                        },TIME);
 
                         clearTimeout(timeEnd[index]);
                         if(child.css('dispiui') === 'block'){

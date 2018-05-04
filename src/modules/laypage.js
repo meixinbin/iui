@@ -6,7 +6,7 @@
  
  */
 
-;(function(){
+;(function(iui){
   "use strict";
   
   var doc = document,id = 'getElementById',tag = 'getElementsByTagName'
@@ -297,5 +297,6 @@
       }) : elem.addEventListener(even, fn, false);
       return this;
     }
-  }
-})();
+  };
+  iui.laypage = laypage;
+})(window.iui);

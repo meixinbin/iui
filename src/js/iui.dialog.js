@@ -47,7 +47,7 @@
 						</div>\
 					<% } %>\
 			    	<% if(type === "ajaxhtml") { %>\
-						<div class="pop_loading J_loading fl"></div>\
+					<div class="pop_loading J_loading fl"></div>\
     					<div class="pop_cont">\
     					<%=message%>\
     					</div>\

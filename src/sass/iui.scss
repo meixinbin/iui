@@ -21,13 +21,13 @@
 @import "layedit.scss";
 @import "laypage.scss";
 @import "flow-more.scss";
-@import "table.scss";
 @import "upload.scss";
 @import "code.scss";
 @import "tree.scss";
 @import "nav.scss";
 @import "breadcrumb.scss";
 @import "tab.scss";
+@import "table.scss";
 @import "timeline.scss";
 @import "badge.scss";
 @import "carousel.scss";
@@ -41,8 +41,8 @@
 //@import "switches.scss";
 //@import "push.scss";
 //@import "pullrefreshs.scss";
-//@import "wxicon.scss";
-//@import "toast.scss";
+@import "mobile/wxicon.scss";
+@import "mobile/toast.scss";
 
 //@import "number.scss";
 

@@ -1,119 +1,121 @@
-
 /**
  * 表单组件
  * @author 梅心斌
  */
-(function($){
+(function ($, iui) {
     "use strict";
 
-    var ELEM = '.iui-form', THIS = 'iui-this', SHOW = 'iui-show', HIDE = 'iui-hide', DISABLED = 'iui-disabled';
-    var Form = function(){
-        this.config = {
-
-        };
+    var MOD_NAME = 'form', ELEM = '.iui-form', THIS = 'iui-this', SHOW = 'iui-show', HIDE = 'iui-hide',
+        DISABLED = 'iui-disabled';
+    var Form = function () {
+        this.config = {};
     };
 
     //全局设置
-    Form.prototype.set = function(options){
+    Form.prototype.set = function (options) {
         var that = this;
         $.extend(true, that.config, options);
         return that;
     };
+    //表单事件监听
+    Form.prototype.on = function (events, callback) {
+        return iui.onevent.call(this, MOD_NAME, events, callback);
+    };
     //表单控件渲染
-    Form.prototype.render = function(type, filter){
-        var that = this,elemForm = $(ELEM + function(){
-                return filter ? ('[iui-filter="' + filter +'"]') : '';
-            }())
-            ,items = {
+    Form.prototype.render = function (type, filter) {
+        var that = this, elemForm = $(ELEM + function () {
+            return filter ? ('[iui-filter="' + filter + '"]') : '';
+        }())
+            , items = {
 
             //下拉选择框
-            select: function(){
+            select: function () {
                 var TIPS = '请选择', CLASS = 'iui-form-select', TITLE = 'iui-select-title'
-                    ,NONE = 'iui-select-none', initValue = '', thatInput
+                    , NONE = 'iui-select-none', initValue = '', thatInput
 
-                    ,selects = elemForm.find('select'), hide = function(e, clear){
-                    if(!$(e.target).parent().hasClass(TITLE) || clear){
-                        $('.'+CLASS).removeClass(CLASS+'ed ' + CLASS+'up');
+                    , selects = elemForm.find('select'), hide = function (e, clear) {
+                    if (!$(e.target).parent().hasClass(TITLE) || clear) {
+                        $('.' + CLASS).removeClass(CLASS + 'ed ' + CLASS + 'up');
                         thatInput && initValue && thatInput.val(initValue);
                     }
                     thatInput = null;
                 }
-                    ,events = function(reElem, disabled, isSearch){
+                    , events = function (reElem, disabled, isSearch) {
                     var select = $(this)
-                        ,title = reElem.find('.' + TITLE)
-                        ,input = title.find('input')
-                        ,dl = reElem.find('dl')
-                        ,dds = dl.children('dd')
+                        , title = reElem.find('.' + TITLE)
+                        , input = title.find('input')
+                        , dl = reElem.find('dl')
+                        , dds = dl.children('dd')
 
 
-                    if(disabled) return;
+                    if (disabled) return;
 
                     //展开下拉
-                    var showDown = function(){
+                    var showDown = function () {
                         var top = reElem.offset().top + reElem.outerHeight() + 5 - win.scrollTop()
-                            ,dlHeight = dl.outerHeight();
-                        reElem.addClass(CLASS+'ed');
+                            , dlHeight = dl.outerHeight();
+                        reElem.addClass(CLASS + 'ed');
                         dds.removeClass(HIDE);
 
                         //上下定位识别
-                        if(top + dlHeight > win.height() && top >= dlHeight){
+                        if (top + dlHeight > win.height() && top >= dlHeight) {
                             reElem.addClass(CLASS + 'up');
                         }
-                    }, hideDown = function(choose){
-                        reElem.removeClass(CLASS+'ed ' + CLASS+'up');
+                    }, hideDown = function (choose) {
+                        reElem.removeClass(CLASS + 'ed ' + CLASS + 'up');
                         input.blur();
 
-                        if(choose) return;
+                        if (choose) return;
 
-                        notOption(input.val(), function(none){
-                            if(none){
-                                initValue = dl.find('.'+THIS).html();
+                        notOption(input.val(), function (none) {
+                            if (none) {
+                                initValue = dl.find('.' + THIS).html();
                                 input && input.val(initValue);
                             }
                         });
                     };
 
                     //点击标题区域
-                    title.on('click', function(e){
-                        reElem.hasClass(CLASS+'ed') ? (
-                                hideDown()
-                            ) : (
-                                hide(e, true),
-                                    showDown()
-                            );
-                        dl.find('.'+NONE).remove();
+                    title.on('click', function (e) {
+                        reElem.hasClass(CLASS + 'ed') ? (
+                            hideDown()
+                        ) : (
+                            hide(e, true),
+                                showDown()
+                        );
+                        dl.find('.' + NONE).remove();
                     });
 
                     //点击箭头获取焦点
-                    title.find('.iui-edge').on('click', function(){
+                    title.find('.iui-edge').on('click', function () {
                         input.focus();
                     });
 
                     //键盘事件
-                    input.on('keyup', function(e){
+                    input.on('keyup', function (e) {
                         var keyCode = e.keyCode;
                         //Tab键
-                        if(keyCode === 9){
+                        if (keyCode === 9) {
                             showDown();
                         }
-                    }).on('keydown', function(e){
+                    }).on('keydown', function (e) {
                         var keyCode = e.keyCode;
                         //Tab键
-                        if(keyCode === 9){
+                        if (keyCode === 9) {
                             hideDown();
-                        } else if(keyCode === 13){ //回车键
+                        } else if (keyCode === 13) { //回车键
                             e.preventDefault();
                         }
                     });
 
                     //检测值是否不属于select项
-                    var notOption = function(value, callback, origin){
+                    var notOption = function (value, callback, origin) {
                         var num = 0;
-                        dds.each(function(){
+                        dds.each(function () {
                             var othis = $(this)
-                                ,text = othis.text()
-                                ,not = text.indexOf(value) === -1;
-                            if(value === '' || (origin === 'blur') ? value !== text : not) num++;
+                                , text = othis.text()
+                                , not = text.indexOf(value) === -1;
+                            if (value === '' || (origin === 'blur') ? value !== text : not) num++;
                             origin === 'keyup' && othis[not ? 'addClass' : 'removeClass'](HIDE);
                         });
                         var none = num === dds.length;
@@ -121,35 +123,35 @@
                     };
 
                     //搜索匹配
-                    var search = function(e){
+                    var search = function (e) {
                         var value = this.value, keyCode = e.keyCode;
 
-                        if(keyCode === 9 || keyCode === 13
+                        if (keyCode === 9 || keyCode === 13
                             || keyCode === 37 || keyCode === 38
                             || keyCode === 39 || keyCode === 40
-                        ){
+                        ) {
                             return false;
                         }
 
-                        notOption(value, function(none){
-                            if(none){
-                                dl.find('.'+NONE)[0] || dl.append('<p class="'+ NONE +'">无匹配项</p>');
+                        notOption(value, function (none) {
+                            if (none) {
+                                dl.find('.' + NONE)[0] || dl.append('<p class="' + NONE + '">无匹配项</p>');
                             } else {
-                                dl.find('.'+NONE).remove();
+                                dl.find('.' + NONE).remove();
                             }
                         }, 'keyup');
 
-                        if(value === ''){
-                            dl.find('.'+NONE).remove();
+                        if (value === '') {
+                            dl.find('.' + NONE).remove();
                         }
                     };
 
-                    if(isSearch){
-                        input.on('keyup', search).on('blur', function(e){
+                    if (isSearch) {
+                        input.on('keyup', search).on('blur', function (e) {
                             thatInput = input;
                             initValue = dl.find('.' + THIS).html();
-                            setTimeout(function(){
-                                notOption(input.val(), function(none){
+                            setTimeout(function () {
+                                notOption(input.val(), function (none) {
                                     initValue || input.val(''); //none && !initValue
                                 }, 'blur');
                             }, 200);
@@ -157,13 +159,13 @@
                     }
 
                     //选择
-                    dds.on('click', function(){
+                    dds.on('click', function () {
                         var othis = $(this), value = othis.attr('iui-value');
                         var filter = select.attr('iui-filter'); //获取过滤器
 
-                        if(othis.hasClass(DISABLED)) return false;
+                        if (othis.hasClass(DISABLED)) return false;
 
-                        if(othis.hasClass('iui-select-tips')){
+                        if (othis.hasClass('iui-select-tips')) {
                             input.val('');
                         } else {
                             input.val(othis.text());
@@ -172,11 +174,16 @@
 
                         othis.siblings().removeClass(THIS);
                         select.val(value).removeClass('iui-form-danger')
+                        iui.event.call(this, MOD_NAME, 'select(' + filter + ')', {
+                            elem: select[0]
+                            , value: value
+                            , othis: reElem
+                        });
                         hideDown(true);
                         return false;
                     });
 
-                    reElem.find('dl>dt').on('click', function(e){
+                    reElem.find('dl>dt').on('click', function (e) {
                         return false;
                     });
 
@@ -184,41 +191,42 @@
                     $(document).off('click', hide).on('click', hide);
                 }
 
-                selects.each(function(index, select){
+                selects.each(function (index, select) {
                     var othis = $(this)
-                        ,hasRender = othis.next('.'+CLASS)
-                        ,disabled = this.disabled
-                        ,value = select.value
-                        ,selected = $(select.options[select.selectedIndex]) //获取当前选中项
-                        ,optionsFirst = select.options[0];
+                        , hasRender = othis.next('.' + CLASS)
+                        , disabled = this.disabled
+                        , value = select.value
+                        , selected = $(select.options[select.selectedIndex]) //获取当前选中项
+                        , optionsFirst = select.options[0];
 
-                    if(typeof othis.attr('iui-ignore') === 'string') return othis.show();
+                    if (typeof othis.attr('iui-ignore') === 'string') return othis.show();
 
                     var isSearch = typeof othis.attr('iui-search') === 'string'
-                        ,placeholder = optionsFirst ? (
-                            optionsFirst.value ? TIPS : (optionsFirst.innerHTML || TIPS)
-                        ) : TIPS;
+                        , placeholder = optionsFirst ? (
+                        optionsFirst.value ? TIPS : (optionsFirst.innerHTML || TIPS)
+                    ) : TIPS;
 
                     //替代元素
-                    var reElem = $(['<div class="'+ (isSearch ? '' : 'iui-unselect ') + CLASS + (disabled ? ' iui-select-disabled' : '') +'">'
-                        ,'<div class="'+ TITLE +'"><input type="text" placeholder="'+ placeholder +'" value="'+ (value ? selected.html() : '') +'" '+ (isSearch ? '' : 'readonly') +' class="iui-input'+ (isSearch ? '' : ' iui-unselect') + (disabled ? (' ' + DISABLED) : '') +'">'
-                        ,'<i class="iui-edge"></i></div>'
-                        ,'<dl class="iui-anim iui-anim-upbit'+ (othis.find('optgroup')[0] ? ' iui-select-group' : '') +'">'+ function(options){
+                    var reElem = $(['<div class="' + (isSearch ? '' : 'iui-unselect ') + CLASS + (disabled ? ' iui-select-disabled' : '') + '">'
+                        , '<div class="' + TITLE + '"><input type="text" placeholder="' + placeholder + '" value="' + (value ? selected.html() : '') + '" ' + (isSearch ? '' : 'readonly') + ' class="iui-input' + (isSearch ? '' : ' iui-unselect') + (disabled ? (' ' + DISABLED) : '') + '">'
+                        , '<i class="iui-edge"></i></div>'
+                        , '<dl class="iui-anim iui-anim-upbit' + (othis.find('optgroup')[0] ? ' iui-select-group' : '') + '">' + function (options) {
                             var arr = [];
-                            for(var index=0;index<options.length;index++){
-                                var item= options[index];
-                                if(index === 0 && !item.value){
-                                    arr.push('<dd iui-value="" class="iui-select-tips">'+ (item.innerHTML || TIPS) +'</dd>');
-                                } else if(item.tagName.toLowerCase() === 'optgroup'){
-                                    arr.push('<dt>'+ item.label +'</dt>');
+                            for (var index = 0; index < options.length; index++) {
+                                var item = options[index];
+                                if (index === 0 && !item.value) {
+                                    arr.push('<dd iui-value="" class="iui-select-tips">' + (item.innerHTML || TIPS) + '</dd>');
+                                } else if (item.tagName.toLowerCase() === 'optgroup') {
+                                    arr.push('<dt>' + item.label + '</dt>');
                                 } else {
-                                    arr.push('<dd iui-value="'+ item.value +'" class="'+ (value === item.value ?  THIS : '') + (item.disabled ? (' '+DISABLED) : '') +'">'+ item.innerHTML +'</dd>');
+                                    arr.push('<dd iui-value="' + item.value + '" class="' + (value === item.value ? THIS : '') + (item.disabled ? (' ' + DISABLED) : '') + '">' + item.innerHTML + '</dd>');
                                 }
-                            };
-                            arr.length === 0 && arr.push('<dd iui-value="" class="'+ DISABLED +'">没有选项</dd>');
+                            }
+                            ;
+                            arr.length === 0 && arr.push('<dd iui-value="" class="' + DISABLED + '">没有选项</dd>');
                             return arr.join('');
-                        }(othis.find('*')) +'</dl>'
-                        ,'</div>'].join(''));
+                        }(othis.find('*')) + '</dl>'
+                        , '</div>'].join(''));
 
                     hasRender[0] && hasRender.remove(); //如果已经渲染，则Rerender
                     othis.after(reElem);
@@ -226,49 +234,54 @@
                 });
             }
             //复选框/开关
-            ,checkbox: function(){
+            , checkbox: function () {
                 var CLASS = {
                     checkbox: ['iui-form-checkbox', 'iui-form-checked', 'checkbox']
-                    ,_switch: ['iui-form-switch', 'iui-form-onswitch', 'switch']
+                    , _switch: ['iui-form-switch', 'iui-form-onswitch', 'switch']
                 }
-                    ,checks = elemForm.find('input[type=checkbox]')
+                    , checks = elemForm.find('input[type=checkbox]')
 
-                    ,events = function(reElem, RE_CLASS){
+                    , events = function (reElem, RE_CLASS) {
                     var check = $(this);
 
                     //勾选
-                    reElem.on('click', function(){
+                    reElem.on('click', function () {
                         var filter = check.attr('iui-filter') //获取过滤器
-                            ,text = (check.attr('iui-text')||'').split('|');
+                            , text = (check.attr('iui-text') || '').split('|');
 
-                        if(check[0].disabled) return;
+                        if (check[0].disabled) return;
 
                         check[0].checked ? (
-                                check[0].checked = false
-                                    ,reElem.removeClass(RE_CLASS[1]).find('em').text(text[1])
-                            ) : (
-                                check[0].checked = true
-                                    ,reElem.addClass(RE_CLASS[1]).find('em').text(text[0])
-                            );
+                            check[0].checked = false
+                                , reElem.removeClass(RE_CLASS[1]).find('em').text(text[1])
+                        ) : (
+                            check[0].checked = true
+                                , reElem.addClass(RE_CLASS[1]).find('em').text(text[0])
+                        );
+                        iui.event.call(check[0], MOD_NAME, RE_CLASS[2] + '(' + filter + ')', {
+                            elem: check[0]
+                            , value: check[0].value
+                            , othis: reElem
+                        });
                     });
                 }
 
-                checks.each(function(index, check){
+                checks.each(function (index, check) {
                     var othis = $(this), skin = othis.attr('iui-skin')
-                        ,text = (othis.attr('iui-text')||'').split('|'), disabled = this.disabled;
-                    if(skin === 'switch') skin = '_'+skin;
+                        , text = (othis.attr('iui-text') || '').split('|'), disabled = this.disabled;
+                    if (skin === 'switch') skin = '_' + skin;
                     var RE_CLASS = CLASS[skin] || CLASS.checkbox;
 
-                    if(typeof othis.attr('iui-ignore') === 'string') return othis.show();
+                    if (typeof othis.attr('iui-ignore') === 'string') return othis.show();
 
                     //替代元素
                     var hasRender = othis.next('.' + RE_CLASS[0]);
-                    var reElem = $(['<div class="iui-unselect '+ RE_CLASS[0] + (
-                        check.checked ? (' '+RE_CLASS[1]) : '') + (disabled ? ' iui-checkbox-disbaled '+DISABLED : '') +'" iui-skin="'+ (skin||'') +'">'
-                        ,{
-                            _switch: '<em>'+ ((check.checked ? text[0] : text[1])||'') +'</em><i></i>'
-                        }[skin] || ((check.title.replace(/\s/g, '') ? ('<span>'+ check.title +'</span>') : '') +'<i class="iui-icon">'+ (skin ? '&#xe605;' : '&#xe618;') +'</i>')
-                        ,'</div>'].join(''));
+                    var reElem = $(['<div class="iui-unselect ' + RE_CLASS[0] + (
+                        check.checked ? (' ' + RE_CLASS[1]) : '') + (disabled ? ' iui-checkbox-disbaled ' + DISABLED : '') + '" iui-skin="' + (skin || '') + '">'
+                        , {
+                            _switch: '<em>' + ((check.checked ? text[0] : text[1]) || '') + '</em><i></i>'
+                        }[skin] || ((check.title.replace(/\s/g, '') ? ('<span>' + check.title + '</span>') : '') + '<i class="iui-icon">' + (skin ? '&#xe605;' : '&#xe618;') + '</i>')
+                        , '</div>'].join(''));
 
                     hasRender[0] && hasRender.remove(); //如果已经渲染，则Rerender
                     othis.after(reElem);
@@ -276,44 +289,56 @@
                 });
             }
             //单选框
-            ,radio: function(){
+            , radio: function () {
                 var CLASS = 'iui-form-radio', ICON = ['&#xe643;', '&#xe63f;']
-                    ,radios = elemForm.find('input[type=radio]')
+                    , radios = elemForm.find('input[type=radio]')
 
-                    ,events = function(reElem){
+                    , events = function (reElem) {
                     var radio = $(this), ANIM = 'iui-anim-scaleSpring';
 
-                    reElem.on('click', function(){
+                    reElem.on('click', function () {
                         var name = radio[0].name, forms = radio.parents(ELEM);
                         var filter = radio.attr('iui-filter'); //获取过滤器
-                        var sameRadio = forms.find('input[name='+ name.replace(/(\.|#|\[|\])/g, '\\$1') +']'); //找到相同name的兄弟
+                        var sameRadio = forms.find('input[name=' + name.replace(/(\.|#|\[|\])/g, '\\$1') + ']'); //找到相同name的兄弟
 
-                        if(radio[0].disabled) return;
+                        if (radio[0].disabled) return;
 
-                        sameRadio.each(function(){
-                            var next = $(this).next('.'+CLASS);
+                        sameRadio.each(function () {
+                            var next = $(this).next('.' + CLASS);
                             //XXXXX 单选按钮不能修改，只需把选中的那个设置为checked即可
                             // this.checked = false;
-                            next.removeClass(CLASS+'ed');
+                            next.removeClass(CLASS + 'ed');
                             next.find('.iui-icon').removeClass(ANIM).html(ICON[1]);
                         });
 
                         radio[0].checked = true;
-                        reElem.addClass(CLASS+'ed');
+                        reElem.addClass(CLASS + 'ed');
                         reElem.find('.iui-icon').addClass(ANIM).html(ICON[0]);
+                        iui.event.call(radio[0], MOD_NAME, 'radio(' + filter + ')', {
+                            elem: radio[0]
+                            , value: radio[0].value
+                            , othis: reElem
+                        });
                     });
                 };
 
-                radios.each(function(index, radio){
+                radios.each(function (index, radio) {
                     var othis = $(this), hasRender = othis.next('.' + CLASS), disabled = this.disabled;
 
-                    if(typeof othis.attr('iui-ignore') === 'string') return othis.show();
+                    if (typeof othis.attr('iui-ignore') === 'string') return othis.show();
 
                     //替代元素
-                    var reElem = $(['<div class="iui-unselect '+ CLASS + (radio.checked ? (' '+CLASS+'ed') : '') + (disabled ? ' iui-radio-disbaled '+DISABLED : '') +'">'
-                        ,'<i class="iui-anim iui-icon">'+ ICON[radio.checked ? 0 : 1] +'</i>'
-                        ,'<span>'+ (radio.title||'未命名') +'</span>'
-                        ,'</div>'].join(''));
+                    var reElem = $(['<div class="iui-unselect ' + CLASS + (radio.checked ? (' ' + CLASS + 'ed') : '') + (disabled ? ' iui-radio-disbaled ' + DISABLED : '') + '">'
+                        , '<i class="iui-anim iui-icon">' + ICON[radio.checked ? 0 : 1] + '</i>'
+                        , '<div>' + function () {
+                            var title = radio.title || '';
+                            if (typeof othis.next().attr('iui-radio') === 'string') {
+                                title = othis.next().html();
+                                othis.next().remove();
+                            }
+                            return title
+                        }() + '</div>'
+                        , '</div>'].join(''));
 
                     hasRender[0] && hasRender.remove(); //如果已经渲染，则Rerender
                     othis.after(reElem);
@@ -322,26 +347,28 @@
             }
         };
         type ? (
-                items[type] ? items[type]() : hint.error('不支持的'+ type + '表单渲染')
-            ) : iui.each(items, function(index, item){
-                item();
-            });
+            items[type] ? items[type]() : alert('不支持的' + type + '表单渲染')
+        ) : iui.each(items, function (index, item) {
+            item();
+        });
 
         return that;
     };
 
     //自动完成渲染
-    var form = new Form(),dom = $(document), win = $(window);
+    var form = new Form(), dom = $(document), win = $(window);
 
     form.render();
 
     //表单reset重置渲染
-    dom.on('reset', ELEM, function(){
+    dom.on('reset', ELEM, function () {
         var filter = $(this).attr('iui-filter');
-        setTimeout(function(){
+        setTimeout(function () {
             form.render(null, filter);
         }, 50);
     });
-})(jQuery);
+    iui.form = form;
+
+})(jQuery, window.iui);
 
 
