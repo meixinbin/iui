@@ -984,7 +984,7 @@ iui.ready(function () {
         if (typeof modName !== 'string' ||
             typeof callback !== 'function') return this;
 
-        return Layui.event(modName, events, null, callback);
+        return iui.event(modName, events, null, callback);
     };
 
     //执行自定义模块事件
